@@ -1,0 +1,223 @@
+<!-- posts/post1.html
+     Contoh artikel detail 1 untuk blog LogikaLiar.
+     Mengikuti gaya dan struktur yang konsisten dengan homepage.
+-->
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paradoks Pilihan: Mengapa Terlalu Banyak Opsi Justru Membingungkan - LogikaLiar</title>
+    <meta name="description" content="Menggali akar psikologis di balik fenomena paradoks pilihan, di mana terlalu banyak opsi justru menghambat pengambilan keputusan.">
+    <meta name="keywords" content="paradoks pilihan, psikologi, pengambilan keputusan, kebingungan, pilihan, LogikaLiar">
+    <meta name="author" content="Editor LogikaLiar">
+
+    <!-- Google Fonts: Merriweather (serif) dan Inter (sans-serif) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome untuk ikon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" xintegrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Link ke CSS yang dihasilkan oleh TailwindCSS -->
+    <link rel="stylesheet" href="../dist/output.css">
+</head>
+<body class="font-sans text-slate-800 bg-slate-50 antialiased transition-colors duration-300 ease-in-out">
+
+    <!-- Header & Navigasi (Sama seperti index.html) -->
+    <header id="navbar" class="fixed top-0 left-0 right-0 z-50 py-4 transition-all duration-300 ease-in-out">
+        <div class="container-custom flex items-center justify-between">
+            <a href="../index.html" class="flex items-center space-x-2">
+                <svg class="w-8 h-8 text-teal-600 dark:text-emerald-400" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/>
+                </svg>
+                <span class="font-serif text-2xl font-extrabold text-slate-900 dark:text-slate-100">LogikaLiar</span>
+            </a>
+            <nav class="hidden md:flex items-center space-x-8">
+                <a href="../index.html" class="text-slate-700 dark:text-slate-300 hover:text-teal-600 dark:hover:text-emerald-400 font-medium transition-colors duration-200">Beranda</a>
+                <a href="../index.html#about" class="text-slate-700 dark:text-slate-300 hover:text-teal-600 dark:hover:text-emerald-400 font-medium transition-colors duration-200">Tentang</a>
+                <a href="../index.html#posts" class="text-slate-700 dark:text-slate-300 hover:text-teal-600 dark:hover:text-emerald-400 font-medium transition-colors duration-200">Artikel</a>
+                <a href="../index.html#contact" class="text-slate-700 dark:text-slate-300 hover:text-teal-600 dark:hover:text-emerald-400 font-medium transition-colors duration-200">Kontak</a>
+                <button id="dark-mode-toggle" class="flex-center w-10 h-10 rounded-full bg-slate-200 dark:bg-slate-700 text-slate-800 dark:text-slate-200 transition-colors duration-300 ease-in-out" aria-label="Toggle dark mode">
+                    <i class="fas fa-moon hidden dark:block"></i>
+                    <i class="fas fa-sun block dark:hidden"></i>
+                </button>
+            </nav>
+            <div class="md:hidden flex items-center space-x-4">
+                <button id="dark-mode-toggle-mobile" class="flex-center w-10 h-10 rounded-full bg-slate-200 dark:bg-slate-700 text-slate-800 dark:text-slate-200 transition-colors duration-300 ease-in-out" aria-label="Toggle dark mode">
+                    <i class="fas fa-moon hidden dark:block"></i>
+                    <i class="fas fa-sun block dark:hidden"></i>
+                </button>
+                <button id="hamburger-menu" class="hamburger focus:outline-none" aria-label="Open mobile menu">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Nav Overlay -->
+        <nav id="mobile-nav-overlay" class="fixed top-0 right-0 h-full w-72 bg-white/95 dark:bg-slate-900/95 backdrop-blur-lg shadow-xl z-50 flex flex-col items-start justify-start p-8 transform translate-x-full transition-transform duration-300 ease-in-out md:hidden">
+            <!-- Header di dalam menu mobile -->
+            <div class="flex items-center justify-between w-full mb-8">
+                <a href="../index.html" class="flex items-center space-x-2">
+                    <svg class="w-8 h-8 text-teal-600 dark:text-emerald-400" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/>
+                    </svg>
+                    <span class="font-serif text-2xl font-extrabold text-slate-900 dark:text-slate-100">LogikaLiar</span>
+                </a>
+                <button id="close-mobile-menu" class="text-slate-800 dark:text-slate-200 text-3xl hover:text-teal-600 dark:hover:text-emerald-400 transition-colors duration-200" aria-label="Close mobile menu">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+
+            <div class="flex flex-col space-y-4 w-full">
+                <a href="../index.html" class="mobile-nav-link" data-target="home" data-delay="50">Beranda</a>
+                <a href="../index.html#about" class="mobile-nav-link" data-target="about" data-delay="100">Tentang</a>
+                <a href="../index.html#posts" class="mobile-nav-link" data-target="posts" data-delay="150">Artikel</a>
+                <a href="../index.html#contact" class="mobile-nav-link" data-target="contact" data-delay="200">Kontak</a>
+            </div>
+        </nav>
+        <!-- Dimming Overlay for Mobile Menu -->
+        <div id="mobile-dim-overlay" class="hidden md:hidden"></div>
+    </header>
+
+    <main class="pt-24 pb-16 lg:pt-32 lg:pb-24">
+        <article class="container-custom max-w-prose-xl mx-auto">
+            <header class="text-center mb-12 reveal-on-scroll">
+                <p class="text-teal-600 dark:text-emerald-400 text-sm font-semibold uppercase tracking-wider mb-2">Psikologi & Filosofi</p>
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-serif font-extrabold leading-tight text-slate-900 dark:text-slate-100 mb-4">
+                    Paradoks Pilihan: Mengapa Terlalu Banyak Opsi Justru Membingungkan
+                </h1>
+                <p class="text-slate-600 dark:text-slate-400 text-md">
+                    Oleh <span class="font-medium">Editor LogikaLiar</span> &bull; 23 Juli 2025 &bull; Waktu Baca: 8 Menit
+                </p>
+            </header>
+
+            <figure class="mb-12 reveal-on-scroll" data-delay="100">
+                <img src="https://placehold.co/1200x600/0F172A/E2E8F0?text=Paradox+of+Choice" alt="Gambar: Labirin Pilihan" class="w-full h-auto rounded-xl shadow-lg">
+                <figcaption class="text-center text-sm text-slate-500 dark:text-slate-400 mt-4">
+                    Ilustrasi labirin yang melambangkan kompleksitas pilihan.
+                </figcaption>
+            </figure>
+
+            <section class="prose dark:prose-invert prose-lg max-w-none mx-auto text-slate-700 dark:text-slate-300 reveal-on-scroll" data-delay="200">
+                <p class="lead text-xl font-medium text-slate-800 dark:text-slate-200 mb-6">
+                    Dalam dunia modern yang serba berlimpah, kita sering dihadapkan pada paradoks: semakin banyak pilihan, semakin sulit kita membuat keputusan. Fenomena ini, yang dikenal sebagai "paradoks pilihan," bukan hanya sekadar anekdot, melainkan sebuah realitas psikologis yang memiliki dampak signifikan pada kesejahteraan dan kepuasan kita.
+                </p>
+
+                <h2>Pendahuluan: Dunia yang Terlalu Banyak Pilihan</h2>
+                <p>
+                    Bayangkan Anda pergi ke supermarket untuk membeli selai. Dulu, mungkin hanya ada dua atau tiga merek. Sekarang, Anda dihadapkan pada puluhan varian: selai stroberi, blueberry, jeruk, rendah gula, organik, tanpa biji, dan seterusnya. Atau ketika Anda memilih platform streaming film; dari Netflix, Disney+, HBO Max, hingga Prime Video, masing-masing menawarkan ribuan judul. Di permukaan, ini tampak seperti kebebasan yang luar biasa. Namun, di balik itu, seringkali tersembunyi kecemasan dan penyesalan.
+                </p>
+
+                <h2>Apa Itu Paradoks Pilihan?</h2>
+                <p>
+                    Konsep paradoks pilihan pertama kali dipopulerkan oleh psikolog Barry Schwartz dalam bukunya "The Paradox of Choice: Why More Is Less." Schwartz berpendapat bahwa meskipun kebebasan memilih adalah hal yang baik, terlalu banyak pilihan dapat menyebabkan kelumpuhan, ketidakpuasan, dan bahkan depresi.
+                </p>
+                <blockquote>
+                    "Paradoks pilihan adalah ketika kebebasan memilih yang berlebihan, alih-alih meningkatkan kebahagiaan, justru mengurangi kebahagiaan kita."
+                </blockquote>
+
+                <h3>Dampak Psikologisnya:</h3>
+                <ul>
+                    <li><strong>Kelumpuhan Keputusan:</strong> Menghadapi terlalu banyak opsi dapat membuat kita kewalahan, sehingga sulit atau bahkan tidak mungkin untuk membuat keputusan sama sekali.</li>
+                    <li><strong>Penyesalan yang Lebih Besar:</strong> Ketika kita akhirnya memilih, kita cenderung lebih menyesal karena mudah membayangkan "apa yang bisa terjadi" jika kita memilih opsi lain.</li>
+                    <li><strong>Ekspektasi yang Meningkat:</strong> Dengan begitu banyak pilihan, kita cenderung memiliki ekspektasi yang lebih tinggi terhadap hasil pilihan kita, yang seringkali sulit dipenuhi.</li>
+                    <li><strong>Self-Blame:</strong> Jika pilihan kita tidak sempurna, kita cenderung menyalahkan diri sendiri karena telah membuat pilihan yang "salah" di antara begitu banyak pilihan yang "benar".</li>
+                </ul>
+
+                <h2>Mengapa Ini Terjadi?</h2>
+                <p>
+                    Ada beberapa mekanisme psikologis yang mendasari paradoks pilihan:
+                </p>
+                <ol>
+                    <li><strong>Beban Kognitif:</strong> Otak kita memiliki kapasitas terbatas untuk memproses informasi. Semakin banyak pilihan, semakin besar beban kognitif yang diperlukan untuk mengevaluasi masing-masing.</li>
+                    <li><strong>Biaya Peluang:</strong> Setiap pilihan yang kita buat berarti kita melepaskan semua pilihan lain yang tidak kita ambil. Semakin banyak pilihan, semakin banyak "biaya peluang" yang kita rasakan.</li>
+                    <li><strong>Perbandingan Sosial:</strong> Di era media sosial, kita terus-menerus membandingkan pilihan dan hasil kita dengan orang lain, yang dapat memperburuk perasaan ketidakpuasan.</li>
+                </ol>
+
+                <h2>Strategi Mengatasi Paradoks Pilihan</h2>
+                <p>
+                    Meskipun dunia terus menawarkan lebih banyak pilihan, kita bisa mengadopsi strategi untuk mengurangi dampak negatif paradoks pilihan:
+                </p>
+                <ul>
+                    <li><strong>Menjadi "Satisficer" daripada "Maximizer":</strong> Seorang "maximizer" berusaha menemukan pilihan terbaik mutlak, sementara "satisficer" mencari pilihan yang "cukup baik." Menjadi satisficer cenderung mengarah pada kepuasan yang lebih besar.</li>
+                    <li><strong>Batasi Pilihan Anda:</strong> Sebelum membuat keputusan, secara sadar batasi jumlah opsi yang akan Anda pertimbangkan. Misalnya, jika mencari sepatu, tentukan hanya akan melihat 3-5 pasang.</li>
+                    <li><strong>Fokus pada Hal Penting:</strong> Identifikasi kriteria paling penting untuk keputusan Anda dan abaikan detail yang kurang relevan.</li>
+                    <li><strong>Terima Ketidaksempurnaan:</strong> Pahami bahwa tidak ada pilihan yang sempurna. Belajar menerima bahwa "cukup baik" seringkali sudah lebih dari cukup.</li>
+                    <li><strong>Kurangi Perbandingan:</strong> Fokus pada kepuasan pribadi Anda daripada membandingkan diri dengan orang lain.</li>
+                </ul>
+
+                <h2>Kesimpulan: Menemukan Kebebasan dalam Keterbatasan</h2>
+                <p>
+                    Paradoks pilihan mengajarkan kita bahwa kebebasan sejati mungkin bukan tentang memiliki pilihan tak terbatas, melainkan tentang kemampuan untuk memilih dengan bijak dan merasa puas dengan pilihan tersebut. Dengan memahami fenomena ini dan menerapkan strategi yang tepat, kita dapat mengurangi kecemasan, meningkatkan kepuasan, dan menemukan kebebasan yang lebih otentik dalam kehidupan yang penuh pilihan.
+                </p>
+                <p>
+                    Bagaimana menurut Anda? Pernahkah Anda merasakan paradoks pilihan ini dalam hidup Anda? Bagikan pengalaman dan strategi Anda di kolom komentar!
+                </p>
+            </section>
+
+            <footer class="mt-16 pt-8 border-t border-slate-200 dark:border-slate-700 text-center reveal-on-scroll" data-delay="300">
+                <p class="text-sm text-slate-600 dark:text-slate-400 mb-4">
+                    Artikel ini adalah bagian dari eksplorasi LogikaLiar tentang psikologi dan filosofi kehidupan.
+                </p>
+                <a href="../index.html#posts" class="btn-primary">Kembali ke Artikel Lain</a>
+            </footer>
+        </article>
+    </main>
+
+    <!-- Footer (Sama seperti index.html) -->
+    <footer class="bg-slate-900 dark:bg-slate-950 text-slate-400 py-12 lg:py-16">
+        <div class="container-custom grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="col-span-1">
+                <a href="../index.html" class="flex items-center space-x-2 mb-4">
+                    <svg class="w-8 h-8 text-emerald-400" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/>
+                    </svg>
+                    <span class="font-serif text-2xl font-extrabold text-slate-100">LogikaLiar</span>
+                </a>
+                <p class="text-sm leading-relaxed mb-4">
+                    Menjelajahi kedalaman pikiran, psikologi, filosofi, dan pemikiran liar untuk kehidupan yang lebih bermakna.
+                </p>
+                <div class="flex space-x-4">
+                    <a href="https://facebook.com/logikaliar" target="_blank" class="social-icon" aria-label="Facebook"><i class="fab fa-facebook-f text-xl"></i></a>
+                    <a href="https://twitter.com/logikaliar" target="_blank" class="social-icon" aria-label="Twitter"><i class="fab fa-twitter text-xl"></i></a>
+                    <a href="https://instagram.com/logikaliar" target="_blank" class="social-icon" aria-label="Instagram"><i class="fab fa-instagram text-xl"></i></a>
+                    <a href="https://linkedin.com/company/logikaliar" target="_blank" class="social-icon" aria-label="LinkedIn"><i class="fab fa-linkedin-in text-xl"></i></a>
+                </div>
+            </div>
+
+            <div class="col-span-1">
+                <h3 class="text-xl font-serif font-semibold text-slate-100 mb-4">Navigasi Cepat</h3>
+                <ul class="space-y-2">
+                    <li><a href="../index.html" class="footer-link">Beranda</a></li>
+                    <li><a href="../index.html#about" class="footer-link">Tentang Kami</a></li>
+                    <li><a href="../index.html#posts" class="footer-link">Artikel</a></li>
+                    <li><a href="#" class="footer-link">Kebijakan Privasi</a></li>
+                    <li><a href="#" class="footer-link">Syarat & Ketentuan</a></li>
+                </ul>
+            </div>
+
+            <div class="col-span-1">
+                <h3 class="text-xl font-serif font-semibold text-slate-100 mb-4">Hubungi Kami</h3>
+                <p class="text-sm mb-2">Email: <a href="mailto:info@logikaliar.com" class="footer-link">info@logikaliar.com</a></p>
+                <p class="text-sm mb-2">Telepon: <a href="tel:+6281234567890" class="footer-link">+62 812 3456 7890</a></p>
+                <p class="text-sm">Alamat: Jl. Pemikiran Kritis No. 1, Jakarta, Indonesia</p>
+            </div>
+        </div>
+        <div class="container-custom text-center text-sm text-slate-500 mt-12 pt-8 border-t border-slate-700 dark:border-slate-800">
+            &copy; 2025 LogikaLiar. Hak Cipta Dilindungi Undang-Undang. Didesain oleh AI Design Agency.
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button id="scroll-to-top" aria-label="Scroll to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Link ke JavaScript kustom -->
+    <script src="../js/main.js"></script>
+</body>
+</html>
+

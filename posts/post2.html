@@ -1,0 +1,232 @@
+<!-- posts/post2.html
+     Contoh artikel detail 2 untuk blog LogikaLiar.
+     Mengikuti gaya dan struktur yang konsisten dengan homepage.
+-->
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seni Bertahan Hidup di Era Post-Truth: Mencari Kebenaran di Tengah Deru Informasi - LogikaLiar</title>
+    <meta name="description" content="Membahas strategi filosofis untuk menavigasi lanskap media modern yang penuh disinformasi dan mencari kebenaran otentik.">
+    <meta name="keywords" content="post-truth, kebenaran, disinformasi, media, filosofi, berpikir kritis, LogikaLiar">
+    <meta name="author" content="Tim Penulis LogikaLiar">
+
+    <!-- Google Fonts: Merriweather (serif) dan Inter (sans-serif) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome untuk ikon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" xintegrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Link ke CSS yang dihasilkan oleh TailwindCSS -->
+    <link rel="stylesheet" href="../dist/output.css">
+</head>
+<body class="font-sans text-slate-800 bg-slate-50 antialiased transition-colors duration-300 ease-in-out">
+
+    <!-- Header & Navigasi (Sama seperti index.html) -->
+    <header id="navbar" class="fixed top-0 left-0 right-0 z-50 py-4 transition-all duration-300 ease-in-out">
+        <div class="container-custom flex items-center justify-between">
+            <a href="../index.html" class="flex items-center space-x-2">
+                <svg class="w-8 h-8 text-teal-600 dark:text-emerald-400" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/>
+                </svg>
+                <span class="font-serif text-2xl font-extrabold text-slate-900 dark:text-slate-100">LogikaLiar</span>
+            </a>
+            <nav class="hidden md:flex items-center space-x-8">
+                <a href="../index.html" class="text-slate-700 dark:text-slate-300 hover:text-teal-600 dark:hover:text-emerald-400 font-medium transition-colors duration-200">Beranda</a>
+                <a href="../index.html#about" class="text-slate-700 dark:text-slate-300 hover:text-teal-600 dark:hover:text-emerald-400 font-medium transition-colors duration-200">Tentang</a>
+                <a href="../index.html#posts" class="text-slate-700 dark:text-slate-300 hover:text-teal-600 dark:hover:text-emerald-400 font-medium transition-colors duration-200">Artikel</a>
+                <a href="../index.html#contact" class="text-slate-700 dark:text-slate-300 hover:text-teal-600 dark:hover:text-emerald-400 font-medium transition-colors duration-200">Kontak</a>
+                <button id="dark-mode-toggle" class="flex-center w-10 h-10 rounded-full bg-slate-200 dark:bg-slate-700 text-slate-800 dark:text-slate-200 transition-colors duration-300 ease-in-out" aria-label="Toggle dark mode">
+                    <i class="fas fa-moon hidden dark:block"></i>
+                    <i class="fas fa-sun block dark:hidden"></i>
+                </button>
+            </nav>
+            <div class="md:hidden flex items-center space-x-4">
+                <button id="dark-mode-toggle-mobile" class="flex-center w-10 h-10 rounded-full bg-slate-200 dark:bg-slate-700 text-slate-800 dark:text-slate-200 transition-colors duration-300 ease-in-out" aria-label="Toggle dark mode">
+                    <i class="fas fa-moon hidden dark:block"></i>
+                    <i class="fas fa-sun block dark:hidden"></i>
+                </button>
+                <button id="hamburger-menu" class="hamburger focus:outline-none" aria-label="Open mobile menu">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Nav Overlay -->
+        <nav id="mobile-nav-overlay" class="fixed top-0 right-0 h-full w-72 bg-white/95 dark:bg-slate-900/95 backdrop-blur-lg shadow-xl z-50 flex flex-col items-start justify-start p-8 transform translate-x-full transition-transform duration-300 ease-in-out md:hidden">
+            <!-- Header di dalam menu mobile -->
+            <div class="flex items-center justify-between w-full mb-8">
+                <a href="../index.html" class="flex items-center space-x-2">
+                    <svg class="w-8 h-8 text-teal-600 dark:text-emerald-400" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/>
+                    </svg>
+                    <span class="font-serif text-2xl font-extrabold text-slate-900 dark:text-slate-100">LogikaLiar</span>
+                </a>
+                <button id="close-mobile-menu" class="text-slate-800 dark:text-slate-200 text-3xl hover:text-teal-600 dark:hover:text-emerald-400 transition-colors duration-200" aria-label="Close mobile menu">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+
+            <div class="flex flex-col space-y-4 w-full">
+                <a href="../index.html" class="mobile-nav-link" data-target="home" data-delay="50">Beranda</a>
+                <a href="../index.html#about" class="mobile-nav-link" data-target="about" data-delay="100">Tentang</a>
+                <a href="../index.html#posts" class="mobile-nav-link" data-target="posts" data-delay="150">Artikel</a>
+                <a href="../index.html#contact" class="mobile-nav-link" data-target="contact" data-delay="200">Kontak</a>
+            </div>
+        </nav>
+        <!-- Dimming Overlay for Mobile Menu -->
+        <div id="mobile-dim-overlay" class="hidden md:hidden"></div>
+    </header>
+
+    <main class="pt-24 pb-16 lg:pt-32 lg:pb-24">
+        <article class="container-custom max-w-prose-xl mx-auto">
+            <header class="text-center mb-12 reveal-on-scroll">
+                <p class="text-amber-600 dark:text-amber-400 text-sm font-semibold uppercase tracking-wider mb-2">Filosofi & Kehidupan</p>
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-serif font-extrabold leading-tight text-slate-900 dark:text-slate-100 mb-4">
+                    Seni Bertahan Hidup di Era Post-Truth: Mencari Kebenaran di Tengah Deru Informasi
+                </h1>
+                <p class="text-slate-600 dark:text-slate-400 text-md">
+                    Oleh <span class="font-medium">Tim Penulis</span> &bull; 20 Juli 2025 &bull; Waktu Baca: 10 Menit
+                </p>
+            </header>
+
+            <figure class="mb-12 reveal-on-scroll" data-delay="100">
+                <img src="https://placehold.co/1200x600/0F172A/E2E8F0?text=Post-Truth+Era" alt="Gambar: Kabut Informasi" class="w-full h-auto rounded-xl shadow-lg">
+                <figcaption class="text-center text-sm text-slate-500 dark:text-slate-400 mt-4">
+                    Ilustrasi kabut informasi yang menyelimuti pencarian kebenaran.
+                </figcaption>
+            </figure>
+
+            <section class="prose dark:prose-invert prose-lg max-w-none mx-auto text-slate-700 dark:text-slate-300 reveal-on-scroll" data-delay="200">
+                <p class="lead text-xl font-medium text-slate-800 dark:text-slate-200 mb-6">
+                    Di tengah banjir informasi dan disinformasi, di mana fakta seringkali terasa kurang relevan dibandingkan emosi dan keyakinan pribadi, kita hidup di era yang disebut "post-truth." Bagaimana kita bisa membedakan fakta dari fiksi, dan menemukan kebenaran otentik di tengah deru informasi yang tak henti?
+                </p>
+
+                <h2>Pendahuluan: Definisi Era Post-Truth</h2>
+                <p>
+                    Istilah "post-truth" dinobatkan sebagai Word of the Year oleh Oxford Dictionaries pada tahun 2016. Ini merujuk pada keadaan di mana fakta objektif kurang berpengaruh dalam membentuk opini publik dibandingkan daya tarik emosi dan keyakinan pribadi. Ini bukan berarti kebenaran tidak ada, melainkan bahwa kebenaran menjadi kurang penting dalam diskursus publik.
+                </p>
+
+                <h2>Karakteristik Era Post-Truth:</h2>
+                <ul>
+                    <li><strong>Dominasi Emosi:</strong> Keputusan dan opini lebih didasarkan pada perasaan daripada bukti.</li>
+                    <li><strong>Berita Palsu (Hoax):</strong> Penyebaran informasi yang sengaja salah atau menyesatkan.</li>
+                    <li><strong>Gelembung Filter & Gema:</strong> Algoritma media sosial menciptakan ruang di mana kita hanya terpapar pada informasi yang mengkonfirmasi pandangan kita sendiri.</li>
+                    <li><strong>Erosi Kepercayaan:</strong> Kepercayaan terhadap institusi tradisional (media, pemerintah, ilmuwan) menurun.</li>
+                </ul>
+                <blockquote>
+                    "Di era post-truth, tantangan terbesar bukanlah kurangnya informasi, melainkan kelebihan informasi yang menyesatkan."
+                </blockquote>
+
+                <h2>Strategi Filosofis untuk Bertahan Hidup:</h2>
+                <h3>1. Skeptisisme Sehat:</h3>
+                <p>
+                    Jangan mudah percaya pada klaim yang sensasional atau yang terlalu sesuai dengan bias Anda. Pertanyakan sumber, motif, dan bukti di balik setiap informasi.
+                </p>
+
+                <h3>2. Verifikasi Sumber:</h3>
+                <p>
+                    Selalu periksa sumber informasi. Apakah itu media yang kredibel? Apakah ada bias yang jelas? Cari tahu siapa yang diuntungkan dari penyebaran informasi tersebut.
+                </p>
+
+                <h3>3. Diversifikasi Sumber Informasi:</h3>
+                <p>
+                    Jangan hanya bergantung pada satu atau dua sumber berita. Baca dari berbagai perspektif, termasuk yang mungkin tidak Anda setujui, untuk mendapatkan gambaran yang lebih lengkap.
+                </p>
+
+                <h3>4. Pikirkan Secara Kritis:</h3>
+                <p>
+                    Latih kemampuan Anda untuk menganalisis argumen, mengidentifikasi kesalahan logika (logical fallacies), dan membedakan antara fakta, opini, dan interpretasi.
+                </p>
+
+                <h3>5. Pahami Bias Kognitif Anda:</h3>
+                <p>
+                    Kita semua memiliki bias kognitif (misalnya, bias konfirmasi, efek Dunning-Kruger) yang memengaruhi cara kita memproses informasi. Menyadari bias ini adalah langkah pertama untuk mengatasinya.
+                </p>
+
+                <h3>6. Libatkan Diri dalam Diskusi Konstruktif:</h3>
+                <p>
+                    Alih-alih berdebat, cobalah untuk terlibat dalam diskusi yang bertujuan untuk memahami, bukan hanya untuk menang. Dengarkan, tanyakan, dan pertimbangkan sudut pandang lain.
+                </p>
+
+                <h3>7. Prioritaskan Kesehatan Mental:</h3>
+                <p>
+                    Terlalu banyak paparan disinformasi dapat menyebabkan kelelahan informasi dan kecemasan. Batasi konsumsi berita jika perlu dan fokus pada kesejahteraan Anda.
+                </p>
+
+                <h2>Kesimpulan: Membangun Kembali Pondasi Kebenaran</h2>
+                <p>
+                    Era post-truth adalah tantangan bagi akal sehat dan demokrasi. Namun, dengan mengadopsi pola pikir filosofis yang didasari oleh skeptisisme sehat, pemikiran kritis, dan keterbukaan terhadap berbagai perspektif, kita dapat membangun kembali pondasi kebenaran dalam kehidupan pribadi dan kolektif. Ini adalah seni bertahan hidup yang esensial di zaman kita.
+                </p>
+                <p>
+                    Bagaimana Anda menavigasi era post-truth? Apakah ada strategi lain yang Anda gunakan? Mari berdiskusi di kolom komentar!
+                </p>
+            </section>
+
+            <footer class="mt-16 pt-8 border-t border-slate-200 dark:border-slate-700 text-center reveal-on-scroll" data-delay="300">
+                <p class="text-sm text-slate-600 dark:text-slate-400 mb-4">
+                    Artikel ini adalah bagian dari eksplorasi LogikaLiar tentang filosofi dan pemikiran kritis.
+                </p>
+                <a href="../index.html#posts" class="btn-primary">Kembali ke Artikel Lain</a>
+            </footer>
+        </article>
+    </main>
+
+    <!-- Footer (Sama seperti index.html) -->
+    <footer class="bg-slate-900 dark:bg-slate-950 text-slate-400 py-12 lg:py-16">
+        <div class="container-custom grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="col-span-1">
+                <a href="../index.html" class="flex items-center space-x-2 mb-4">
+                    <svg class="w-8 h-8 text-emerald-400" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/>
+                    </svg>
+                    <span class="font-serif text-2xl font-extrabold text-slate-100">LogikaLiar</span>
+                </a>
+                <p class="text-sm leading-relaxed mb-4">
+                    Menjelajahi kedalaman pikiran, psikologi, filosofi, dan pemikiran liar untuk kehidupan yang lebih bermakna.
+                </p>
+                <div class="flex space-x-4">
+                    <a href="https://facebook.com/logikaliar" target="_blank" class="social-icon" aria-label="Facebook"><i class="fab fa-facebook-f text-xl"></i></a>
+                    <a href="https://twitter.com/logikaliar" target="_blank" class="social-icon" aria-label="Twitter"><i class="fab fa-twitter text-xl"></i></a>
+                    <a href="https://instagram.com/logikaliar" target="_blank" class="social-icon" aria-label="Instagram"><i class="fab fa-instagram text-xl"></i></a>
+                    <a href="https://linkedin.com/company/logikaliar" target="_blank" class="social-icon" aria-label="LinkedIn"><i class="fab fa-linkedin-in text-xl"></i></a>
+                </div>
+            </div>
+
+            <div class="col-span-1">
+                <h3 class="text-xl font-serif font-semibold text-slate-100 mb-4">Navigasi Cepat</h3>
+                <ul class="space-y-2">
+                    <li><a href="../index.html" class="footer-link">Beranda</a></li>
+                    <li><a href="../index.html#about" class="footer-link">Tentang Kami</a></li>
+                    <li><a href="../index.html#posts" class="footer-link">Artikel</a></li>
+                    <li><a href="#" class="footer-link">Kebijakan Privasi</a></li>
+                    <li><a href="#" class="footer-link">Syarat & Ketentuan</a></li>
+                </ul>
+            </div>
+
+            <div class="col-span-1">
+                <h3 class="text-xl font-serif font-semibold text-slate-100 mb-4">Hubungi Kami</h3>
+                <p class="text-sm mb-2">Email: <a href="mailto:info@logikaliar.com" class="footer-link">info@logikaliar.com</a></p>
+                <p class="text-sm mb-2">Telepon: <a href="tel:+6281234567890" class="footer-link">+62 812 3456 7890</a></p>
+                <p class="text-sm">Alamat: Jl. Pemikiran Kritis No. 1, Jakarta, Indonesia</p>
+            </div>
+        </div>
+        <div class="container-custom text-center text-sm text-slate-500 mt-12 pt-8 border-t border-slate-700 dark:border-slate-800">
+            &copy; 2025 LogikaLiar. Hak Cipta Dilindungi Undang-Undang. Didesain oleh AI Design Agency.
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button id="scroll-to-top" aria-label="Scroll to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Link ke JavaScript kustom -->
+    <script src="../js/main.js"></script>
+</body>
+</html>
+

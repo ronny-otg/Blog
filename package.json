@@ -1,0 +1,33 @@
+// package.json
+// Konfigurasi NPM untuk proyek LogikaLiar
+// Mendefinisikan dependensi dan skrip untuk pengembangan.
+{
+  "name": "logikaliar",
+  "version": "1.0.0",
+  "description": "Proyek website blog premium LogikaLiar: psikologi, filosofi, pemikiran liar, dan logika kehidupan.",
+  "main": "index.js",
+  "scripts": {
+    // Skrip untuk memulai proses build Tailwind CSS.
+    // Mengawasi perubahan pada src/input.css dan membangunnya ke dist/output.css.
+    "start": "npx tailwindcss -i ./src/input.css -o ./dist/output.css --watch",
+    // Skrip untuk membangun Tailwind CSS untuk produksi (minifikasi).
+    "build": "npx tailwindcss -i ./src/input.css -o ./dist/output.css --minify"
+  },
+  "keywords": [
+    "blog",
+    "psikologi",
+    "filosofi",
+    "logika",
+    "premium",
+    "tailwind"
+  ],
+  "author": "AI Design Agency",
+  "license": "MIT",
+  "devDependencies": {
+    // Dependensi pengembangan untuk Tailwind CSS.
+    // Pastikan versi yang digunakan kompatibel dengan proyek Anda.
+    "tailwindcss": "^3.4.4"
+  }
+}
+
+

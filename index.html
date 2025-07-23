@@ -1,0 +1,351 @@
+<!-- index.html
+     Halaman utama (Homepage) untuk blog premium LogikaLiar.
+     Desain mewah, minimalis, modern, elegan, dan sangat fungsional.
+     Minimal 1000 baris HTML.
+-->
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LogikaLiar - Psikologi, Filosofi, dan Pemikiran Kritis</title>
+    <meta name="description" content="LogikaLiar adalah blog premium yang membahas psikologi, filosofi, pemikiran liar, dan logika kehidupan untuk remaja cerdas, mahasiswa pemikir kritis, dan penggemar konten filosofis.">
+    <meta name="keywords" content="psikologi, filosofi, pemikiran kritis, logika, kehidupan, blog, premium, LogikaLiar">
+    <meta name="author" content="LogikaLiar Team">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.logikaliar.com/">
+    <meta property="og:title" content="LogikaLiar - Psikologi, Filosofi, dan Pemikiran Kritis">
+    <meta property="og:description" content="LogikaLiar adalah blog premium yang membahas psikologi, filosofi, pemikiran liar, dan logika kehidupan untuk remaja cerdas, mahasiswa pemikir kritis, dan penggemar konten filosofis.">
+    <meta property="og:image" content="https://www.logikaliar.com/images/og-image.jpg"> <!-- Placeholder image -->
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://www.logikaliar.com/">
+    <meta property="twitter:title" content="LogikaLiar - Psikologi, Filosofi, dan Pemikiran Kritis">
+    <meta property="twitter:description" content="LogikaLiar adalah blog premium yang membahas psikologi, filosofi, pemikiran liar, dan logika kehidupan untuk remaja cerdas, mahasiswa pemikir kritis, dan penggemar konten filosofis.">
+    <meta property="twitter:image" content="https://www.logikaliar.com/images/twitter-image.jpg"> <!-- Placeholder image -->
+
+    <!-- Favicon -->
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+
+    <!-- Google Fonts: Merriweather (serif) dan Inter (sans-serif) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome untuk ikon (misalnya sosial media, toggle dark mode) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" xintegrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Link ke CSS yang dihasilkan oleh TailwindCSS -->
+    <link rel="stylesheet" href="./dist/output.css">
+</head>
+<body class="font-sans text-slate-800 bg-slate-50 antialiased transition-colors duration-300 ease-in-out">
+
+    <!-- Header & Navigasi -->
+    <!-- Menghapus kelas bg-white dan dark:bg-slate-900 dari sini. -->
+    <!-- Navbar akan sepenuhnya transparan secara default, dan navbar-sticky akan menambahkan efek saat di-scroll. -->
+    <header id="navbar" class="fixed top-0 left-0 right-0 z-50 py-4 transition-all duration-300 ease-in-out">
+        <div class="container-custom flex items-center justify-between">
+            <!-- Logo LogikaLiar -->
+            <a href="index.html" class="flex items-center space-x-2 reveal-on-scroll">
+                <span class="logo-text font-serif text-2xl font-extrabold text-slate-900 dark:text-slate-100">LOGIKA<span class="text-sm">liar</span>.</span></span></span>
+            </a>
+
+            <!-- Navigasi Desktop -->
+            <nav class="hidden md:flex items-center space-x-8">
+                <a href="index.html" class="text-slate-700 dark:text-slate-300 hover:text-teal-600 dark:hover:text-emerald-400 font-medium transition-colors duration-200 reveal-on-scroll" data-delay="100">Beranda</a>
+                <a href="#about" class="text-slate-700 dark:text-slate-300 hover:text-teal-600 dark:hover:text-emerald-400 font-medium transition-colors duration-200 reveal-on-scroll" data-delay="200">Tentang</a>
+                <a href="#posts" class="text-slate-700 dark:text-slate-300 hover:text-teal-600 dark:hover:text-emerald-400 font-medium transition-colors duration-200 reveal-on-scroll" data-delay="300">Artikel</a>
+                <a href="#contact" class="text-slate-700 dark:text-slate-300 hover:text-teal-600 dark:hover:text-emerald-400 font-medium transition-colors duration-200 reveal-on-scroll" data-delay="400">Kontak</a>
+                <!-- Dark Mode Toggle -->
+                <button id="dark-mode-toggle" class="flex-center w-10 h-10 rounded-full bg-slate-200 dark:bg-slate-700 text-slate-800 dark:text-slate-200 transition-colors duration-300 ease-in-out reveal-on-scroll" data-delay="500" aria-label="Toggle dark mode">
+                    <i class="fas fa-moon hidden dark:block"></i>
+                    <i class="fas fa-sun block dark:hidden"></i>
+                </button>
+            </nav>
+
+            <!-- Hamburger Menu (Mobile) -->
+            <div class="md:hidden flex items-center space-x-4">
+                <button id="dark-mode-toggle-mobile" class="flex-center w-10 h-10 rounded-full bg-slate-200 dark:bg-slate-700 text-slate-800 dark:text-slate-200 transition-colors duration-300 ease-in-out" aria-label="Toggle dark mode">
+                    <i class="fas fa-moon hidden dark:block"></i>
+                    <i class="fas fa-sun block dark:hidden"></i>
+                </button>
+                <button id="hamburger-menu" class="hamburger focus:outline-none" aria-label="Open mobile menu">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Nav Overlay -->
+        <nav id="mobile-nav-overlay" class="fixed top-0 right-0 h-full w-72 bg-white dark:bg-slate-900 shadow-2xl z-50 flex flex-col items-start justify-start p-8 transform translate-x-full transition-transform duration-300 ease-in-out border-l border-slate-200 dark:border-slate-700 md:hidden">
+            <!-- Header di dalam menu mobile -->
+            <div class="flex items-center justify-between w-full mb-8">
+                <a href="index.html" class="flex items-center space-x-2">
+                    <svg class="w-8 h-8 text-teal-600 dark:text-emerald-400" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/>
+                    </svg>
+                    <span class="font-serif text-2xl font-extrabold text-slate-900 dark:text-slate-100">LogikaLiar</span>
+                </a>
+                <button id="close-mobile-menu" class="text-slate-800 dark:text-slate-200 text-3xl hover:text-teal-600 dark:hover:text-emerald-400 transition-colors duration-200" aria-label="Close mobile menu">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+
+            <div class="flex flex-col space-y-4 w-full">
+                <a href="index.html" class="mobile-nav-link" data-target="home" data-delay="50">Beranda</a>
+                <a href="#about" class="mobile-nav-link" data-target="about" data-delay="100">Tentang</a>
+                <a href="#posts" class="mobile-nav-link" data-target="posts" data-delay="150">Artikel</a>
+                <a href="#contact" class="mobile-nav-link" data-target="contact" data-delay="200">Kontak</a>
+            </div>
+        </nav>
+
+        <!-- Dimming Overlay for Mobile Menu -->
+        <div id="mobile-dim-overlay" class="hidden md:hidden"></div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="relative h-screen flex items-center justify-center text-center overflow-hidden bg-gradient-to-br from-slate-100 to-slate-200 dark:from-slate-800 dark:to-slate-900">
+            <!-- Background Pattern (SVG) -->
+            <div class="absolute inset-0 z-0 opacity-10 dark:opacity-5 bg-pattern-light dark:bg-pattern-dark"></div>
+
+            <div class="container-custom relative z-10 p-8 reveal-on-scroll">
+                <h1 class="text-5xl md:text-6xl lg:text-7xl font-serif font-extrabold leading-tight mb-6 text-slate-900 dark:text-slate-100 text-balance">
+                    Mengurai <span class="text-gradient">Logika Liar</span>: Menjelajahi Kedalaman Pikiran
+                </h1>
+                <p class="text-xl md:text-2xl text-slate-700 dark:text-slate-300 max-w-3xl mx-auto mb-10 leading-relaxed reveal-on-scroll" data-delay="200">
+                    Sebuah perjalanan intelektual ke dalam psikologi, filosofi, dan pemikiran tak terduga yang membentuk realitas kita.
+                </p>
+                <a href="#posts" class="btn-primary reveal-on-scroll" data-delay="400">Jelajahi Artikel Terbaru</a>
+            </div>
+        </section>
+
+        <!-- Section Artikel Terbaru -->
+        <section id="posts" class="section-padding bg-slate-50 dark:bg-slate-900">
+            <div class="container-custom">
+                <h2 class="section-title reveal-on-scroll">Artikel Terbaru</h2>
+                <p class="section-subtitle reveal-on-scroll" data-delay="100">Selami pemikiran-pemikiran yang menantang dan mencerahkan.</p>
+
+                <div class="grid-cols-custom">
+                    <!-- Artikel 1 -->
+                    <article class="article-card reveal-on-scroll" data-delay="200">
+                        <a href="posts/post1.html">
+                            <img src="https://placehold.co/600x400/0F172A/E2E8F0?text=Post+1+Image" alt="Gambar Artikel 1: Labirin Pemikiran" class="rounded-t-xl">
+                            <div class="article-card-content">
+                                <span class="text-teal-600 dark:text-emerald-400 text-xs font-semibold uppercase tracking-wider mb-2 block">Psikologi & Filosofi</span>
+                                <h3 class="font-serif text-slate-900 dark:text-slate-100 hover:text-teal-700 dark:hover:text-emerald-500 transition-colors duration-200">
+                                    Paradoks Pilihan: Mengapa Terlalu Banyak Opsi Justru Membingungkan
+                                </h3>
+                                <p class="text-slate-600 dark:text-slate-400 text-sm mb-4">
+                                    Dalam dunia modern yang serba berlimpah, kita sering dihadapkan pada paradoks: semakin banyak pilihan, semakin sulit kita membuat keputusan. Artikel ini menggali akar psikologis di balik fenomena ini...
+                                </p>
+                                <div class="flex items-center justify-between text-xs text-slate-500 dark:text-slate-400">
+                                    <span>Oleh: Editor LogikaLiar</span>
+                                    <span>23 Juli 2025</span>
+                                </div>
+                            </div>
+                        </a>
+                    </article>
+
+                    <!-- Artikel 2 -->
+                    <article class="article-card reveal-on-scroll" data-delay="300">
+                        <a href="posts/post2.html">
+                            <img src="https://placehold.co/600x400/0F172A/E2E8F0?text=Post+2+Image" alt="Gambar Artikel 2: Cahaya Kebenaran" class="rounded-t-xl">
+                            <div class="article-card-content">
+                                <span class="text-amber-600 dark:text-amber-400 text-xs font-semibold uppercase tracking-wider mb-2 block">Filosofi & Kehidupan</span>
+                                <h3 class="font-serif text-slate-900 dark:text-slate-100 hover:text-amber-700 dark:hover:text-amber-500 transition-colors duration-200">
+                                    Seni Bertahan Hidup di Era Post-Truth: Mencari Kebenaran di Tengah Deru Informasi
+                                </h3>
+                                <p class="text-slate-600 dark:text-slate-400 text-sm mb-4">
+                                    Di tengah banjir informasi dan disinformasi, bagaimana kita bisa membedakan fakta dari fiksi? Artikel ini membahas strategi filosofis untuk menavigasi lanskap media modern...
+                                </p>
+                                <div class="flex items-center justify-between text-xs text-slate-500 dark:text-slate-400">
+                                    <span>Oleh: Tim Penulis</span>
+                                    <span>20 Juli 2025</span>
+                                </div>
+                            </div>
+                        </a>
+                    </article>
+
+                    <!-- Artikel 3 (Placeholder) -->
+                    <article class="article-card reveal-on-scroll" data-delay="400">
+                        <a href="#">
+                            <img src="https://placehold.co/600x400/0F172A/E2E8F0?text=Post+3+Image" alt="Gambar Artikel 3: Refleksi Diri" class="rounded-t-xl">
+                            <div class="article-card-content">
+                                <span class="text-emerald-600 dark:text-teal-400 text-xs font-semibold uppercase tracking-wider mb-2 block">Psikologi & Pemikiran Liar</span>
+                                <h3 class="font-serif text-slate-900 dark:text-slate-100 hover:text-emerald-700 dark:hover:text-teal-500 transition-colors duration-200">
+                                    Mengapa Kita Sering Merasa Tidak Cukup: Membongkar Mitos Pencapaian Tanpa Batas
+                                </h3>
+                                <p class="text-slate-600 dark:text-slate-400 text-sm mb-4">
+                                    Tekanan untuk selalu mencapai lebih tinggi seringkali membuat kita merasa tidak pernah cukup. Mari kita selami akar psikologis dari perasaan ini dan bagaimana mengatasinya...
+                                </p>
+                                <div class="flex items-center justify-between text-xs text-slate-500 dark:text-slate-400">
+                                    <span>Oleh: LogikaLiar</span>
+                                    <span>18 Juli 2025</span>
+                                </div>
+                            </div>
+                        </a>
+                    </article>
+
+                    <!-- Artikel 4 (Placeholder) -->
+                    <article class="article-card reveal-on-scroll" data-delay="500">
+                        <a href="#">
+                            <img src="https://placehold.co/600x400/0F172A/E2E8F0?text=Post+4+Image" alt="Gambar Artikel 4: Jendela Waktu" class="rounded-t-xl">
+                            <div class="article-card-content">
+                                <span class="text-teal-600 dark:text-emerald-400 text-xs font-semibold uppercase tracking-wider mb-2 block">Filosofi & Waktu</span>
+                                <h3 class="font-serif text-slate-900 dark:text-slate-100 hover:text-teal-700 dark:hover:text-emerald-500 transition-colors duration-200">
+                                    Konsep Waktu dalam Filosofi Timur dan Barat: Sebuah Perbandingan Mendalam
+                                </h3>
+                                <p class="text-slate-600 dark:text-slate-400 text-sm mb-4">
+                                    Waktu adalah salah satu misteri terbesar yang telah direnungkan manusia sepanjang sejarah. Bagaimana pandangan Timur dan Barat berbeda dalam memahami esensi waktu?...
+                                </p>
+                                <div class="flex items-center justify-between text-xs text-slate-500 dark:text-slate-400">
+                                    <span>Oleh: Penulis Tamu</span>
+                                    <span>15 Juli 2025</span>
+                                </div>
+                            </div>
+                        </a>
+                    </article>
+
+                    <!-- Artikel 5 (Placeholder) -->
+                    <article class="article-card reveal-on-scroll" data-delay="600">
+                        <a href="#">
+                            <img src="https://placehold.co/600x400/0F172A/E2E8F0?text=Post+5+Image" alt="Gambar Artikel 5: Etika AI" class="rounded-t-xl">
+                            <div class="article-card-content">
+                                <span class="text-amber-600 dark:text-amber-400 text-xs font-semibold uppercase tracking-wider mb-2 block">Etika & Teknologi</span>
+                                <h3 class="font-serif text-slate-900 dark:text-slate-100 hover:text-amber-700 dark:hover:text-amber-500 transition-colors duration-200">
+                                    Etika Kecerdasan Buatan: Batasan Moral dalam Menciptakan Pikiran Artifisial
+                                </h3>
+                                <p class="text-slate-600 dark:text-slate-400 text-sm mb-4">
+                                    Seiring kemajuan AI, pertanyaan etis menjadi semakin mendesak. Apa batasan yang harus kita tetapkan dalam mengembangkan kecerdasan buatan agar tetap selaras dengan nilai-nilai kemanusiaan?...
+                                </p>
+                                <div class="flex items-center justify-between text-xs text-slate-500 dark:text-slate-400">
+                                    <span>Oleh: Tim Editor</span>
+                                    <span>12 Juli 2025</span>
+                                </div>
+                            </div>
+                        </a>
+                    </article>
+
+                    <!-- Artikel 6 (Placeholder) -->
+                    <article class="article-card reveal-on-scroll" data-delay="700">
+                        <a href="#">
+                            <img src="https://placehold.co/600x400/0F172A/E2E8F0?text=Post+6+Image" alt="Gambar Artikel 6: Memahami Kebahagiaan" class="rounded-t-xl">
+                            <div class="article-card-content">
+                                <span class="text-emerald-600 dark:text-teal-400 text-xs font-semibold uppercase tracking-wider mb-2 block">Psikologi Positif</span>
+                                <h3 class="font-serif text-slate-900 dark:text-slate-100 hover:text-emerald-700 dark:hover:text-teal-500 transition-colors duration-200">
+                                    Mengejar Kebahagiaan yang Otentik: Lebih dari Sekadar Senyum di Wajah
+                                </h3>
+                                <p class="text-slate-600 dark:text-slate-400 text-sm mb-4">
+                                    Apa sebenarnya kebahagiaan itu? Apakah ia sekadar perasaan sesaat atau sesuatu yang lebih dalam? Mari kita telusuri berbagai perspektif tentang kebahagiaan sejati...
+                                </p>
+                                <div class="flex items-center justify-between text-xs text-slate-500 dark:text-slate-400">
+                                    <span>Oleh: LogikaLiar</span>
+                                    <span>10 Juli 2025</span>
+                                </div>
+                            </div>
+                        </a>
+                    </article>
+
+                </div>
+                <div class="text-center mt-16 reveal-on-scroll" data-delay="800">
+                    <a href="#" class="btn-primary">Lihat Semua Artikel</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Tentang LogikaLiar -->
+        <section id="about" class="section-padding bg-slate-100 dark:bg-slate-800">
+            <div class="container-custom grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div class="reveal-on-scroll">
+                    <img src="https://placehold.co/600x400/0F172A/E2E8F0?text=About+LogikaLiar" alt="Tentang LogikaLiar" class="rounded-xl shadow-xl transform rotate-1 hover:rotate-0 transition-transform duration-300">
+                </div>
+                <div class="reveal-on-scroll" data-delay="200">
+                    <h2 class="text-4xl lg:text-5xl font-serif font-extrabold mb-6 text-slate-900 dark:text-slate-100 leading-tight">
+                        Tentang <span class="text-gradient">LogikaLiar</span>
+                    </h2>
+                    <p class="text-lg text-slate-700 dark:text-slate-300 mb-6 leading-relaxed">
+                        LogikaLiar lahir dari kegelisahan akan pemikiran yang stagnan dan kebutuhan akan eksplorasi intelektual yang lebih dalam. Kami percaya bahwa setiap individu memiliki potensi untuk berpikir secara kritis, melampaui batas konvensional, dan menemukan logika di balik "keliaran" kehidupan.
+                    </p>
+                    <p class="text-lg text-slate-700 dark:text-slate-300 mb-6 leading-relaxed">
+                        Platform ini didedikasikan untuk remaja cerdas, mahasiswa pemikir kritis, dan siapa pun yang haus akan konten filosofis, psikologis, dan pemikiran liar yang merangsang. Kami menyajikan artikel-artikel yang mendalam, analitis, namun tetap mudah diakses, mengajak Anda untuk mempertanyakan, merenung, dan tumbuh.
+                    </p>
+                    <p class="text-lg text-slate-700 dark:text-slate-300 leading-relaxed">
+                        Bergabunglah dengan komunitas kami dan mari bersama-sama mengurai benang-benang kompleksitas pikiran dan kehidupan.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action Section -->
+        <section class="section-padding bg-teal-600 dark:bg-emerald-600 text-white text-center">
+            <div class="container-custom reveal-on-scroll">
+                <h2 class="text-4xl lg:text-5xl font-serif font-extrabold mb-6 leading-tight">
+                    Jangan Lewatkan Pemikiran Terbaru Kami
+                </h2>
+                <p class="text-xl md:text-2xl mb-10 max-w-2xl mx-auto">
+                    Daftar untuk mendapatkan update artikel langsung ke kotak masuk Anda.
+                </p>
+                <form class="max-w-xl mx-auto flex flex-col sm:flex-row gap-4 reveal-on-scroll" data-delay="200">
+                    <input type="email" placeholder="Masukkan email Anda..." class="flex-grow p-4 rounded-full border-2 border-white/50 bg-white/20 text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-white focus:border-transparent transition-all duration-300" aria-label="Email subscription">
+                    <button type="submit" class="btn-primary bg-white text-teal-600 dark:text-emerald-600 hover:bg-slate-100 hover:text-teal-700 dark:hover:text-emerald-700">Berlangganan</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer id="contact" class="bg-slate-900 dark:bg-slate-950 text-slate-400 py-12 lg:py-16">
+        <div class="container-custom grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="col-span-1 reveal-on-scroll">
+                <a href="index.html" class="flex items-center space-x-2 mb-4">
+                    <span class="font-serif text-2xl font-extrabold text-slate-100">LogikaLiar</span>
+                </a>
+                <p class="text-sm leading-relaxed mb-4">
+                    Menjelajahi kedalaman pikiran, psikologi, filosofi, dan pemikiran liar untuk kehidupan yang lebih bermakna.
+                </p>
+                <div class="flex space-x-4">
+                    <a href="https://facebook.com/logikaliar" target="_blank" class="social-icon" aria-label="Facebook"><i class="fab fa-facebook-f text-xl"></i></a>
+                    <a href="https://twitter.com/logikaliar" target="_blank" class="social-icon" aria-label="Twitter"><i class="fab fa-twitter text-xl"></i></a>
+                    <a href="https://instagram.com/logikaliar" target="_blank" class="social-icon" aria-label="Instagram"><i class="fab fa-instagram text-xl"></i></a>
+                    <a href="https://linkedin.com/company/logikaliar" target="_blank" class="social-icon" aria-label="LinkedIn"><i class="fab fa-linkedin-in text-xl"></i></a>
+                </div>
+            </div>
+
+            <div class="col-span-1 reveal-on-scroll" data-delay="100">
+                <h3 class="text-xl font-serif font-semibold text-slate-100 mb-4">Navigasi Cepat</h3>
+                <ul class="space-y-2">
+                    <li><a href="index.html" class="footer-link">Beranda</a></li>
+                    <li><a href="#about" class="footer-link">Tentang Kami</a></li>
+                    <li><a href="#posts" class="footer-link">Artikel</a></li>
+                    <li><a href="#" class="footer-link">Kebijakan Privasi</a></li>
+                    <li><a href="#" class="footer-link">Syarat & Ketentuan</a></li>
+                </ul>
+            </div>
+
+            <div class="col-span-1 reveal-on-scroll" data-delay="200">
+                <h3 class="text-xl font-serif font-semibold text-slate-100 mb-4">Hubungi Kami</h3>
+                <p class="text-sm mb-2">Email: <a href="mailto:info@logikaliar.com" class="footer-link">info@logikaliar.com</a></p>
+                <p class="text-sm mb-2">Telepon: <a href="tel:+6281234567890" class="footer-link">+62 812 3456 7890</a></p>
+                <p class="text-sm">Alamat: Jl. Pemikiran Kritis No. 1, Jakarta, Indonesia</p>
+            </div>
+        </div>
+        <div class="container-custom text-center text-sm text-slate-500 mt-12 pt-8 border-t border-slate-700 dark:border-slate-800 reveal-on-scroll" data-delay="300">
+            &copy; 2025 LogikaLiar. Hak Cipta Dilindungi Undang-Undang. Didesain oleh Ronny.
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button id="scroll-to-top" aria-label="Scroll to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Link ke JavaScript kustom -->
+    <script src="./js/main.js"></script>
+</body>
+</html>

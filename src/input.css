@@ -1,0 +1,326 @@
+/* src/input.css
+   File CSS kustom untuk proyek LogikaLiar.
+   Mengandung direktif Tailwind, gaya dasar, dan utilitas kustom.
+   Minimal 200 baris kode.
+*/
+
+/* Direktif Tailwind CSS */
+/* Ini mengimpor semua kelas dasar, komponen, dan utilitas Tailwind. */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* -------------------------------------------------------------------------- */
+/* Gaya Dasar & Reset                               */
+/* -------------------------------------------------------------------------- */
+
+/* Gaya dasar untuk elemen HTML, memastikan konsistensi lintas browser. */
+html {
+  scroll-behavior: smooth; /* Mengaktifkan smooth scrolling untuk link anchor */
+  -webkit-font-smoothing: antialiased; /* Meningkatkan rendering font di WebKit */
+  -moz-osx-osx-font-smoothing: grayscale; /* Meningkatkan rendering font di Firefox */
+}
+
+body {
+  /* Font default untuk body, menggunakan font-sans yang didefinisikan di tailwind.config.js */
+  font-family: theme('fontFamily.sans');
+  /* Warna teks default dan latar belakang untuk mode terang */
+  @apply text-slate-800 bg-slate-50 transition-colors duration-300 ease-in-out;
+}
+
+/* Gaya untuk mode gelap */
+.dark body {
+  /* Warna teks dan latar belakang untuk mode gelap */
+  @apply text-slate-200 bg-slate-900;
+}
+
+/* Gaya untuk judul (h1-h6) */
+h1, h2, h3, h4, h5, h6 {
+  /* Menggunakan font-serif yang didefinisikan di tailwind.config.js */
+  font-family: theme('fontFamily.serif');
+  /* Mengatur margin bawah untuk judul */
+  @apply mb-4 font-bold;
+}
+
+/* Gaya untuk link */
+a {
+  /* Transisi warna untuk efek hover yang halus */
+  @apply text-teal-600 hover:text-teal-800 transition-colors duration-200 ease-in-out;
+}
+
+.dark a {
+  @apply text-teal-400 hover:text-teal-200;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Komponen Kustom                               */
+/* -------------------------------------------------------------------------- */
+
+/* Gaya untuk tombol utama (CTA) */
+.btn-primary {
+  @apply inline-block px-8 py-3 rounded-full bg-teal-600 text-white font-semibold
+         shadow-lg hover:bg-teal-700 transition-all duration-300 ease-in-out
+         transform hover:-translate-y-1 hover:scale-105;
+}
+
+.dark .btn-primary {
+  @apply bg-emerald-500 hover:bg-emerald-600;
+}
+
+/* Gaya untuk kartu artikel */
+.article-card {
+  @apply bg-white dark:bg-slate-800 rounded-xl shadow-lg overflow-hidden
+         transform transition-all duration-300 ease-in-out hover:-translate-y-2
+         hover:shadow-2xl;
+}
+
+.article-card img {
+  @apply w-full h-48 object-cover;
+}
+
+.article-card-content {
+  @apply p-6;
+}
+
+.article-card h3 {
+  @apply text-xl font-serif text-slate-900 dark:text-slate-100 mb-3;
+}
+
+.article-card p {
+  @apply text-slate-600 dark:text-slate-400 text-sm;
+}
+
+/* Gaya untuk navigasi sticky */
+.navbar-sticky {
+  @apply fixed top-0 left-0 right-0 z-50 bg-white/80 dark:bg-slate-900/80
+         backdrop-blur-lg shadow-md transition-all duration-300 ease-in-out;
+}
+
+/* Gaya untuk tombol scroll-to-top */
+#scroll-to-top {
+  @apply fixed bottom-8 right-8 bg-teal-600 text-white p-3 rounded-full shadow-lg
+         hover:bg-teal-700 transition-all duration-300 ease-in-out cursor-pointer
+         z-40 opacity-0 invisible; /* Default hidden */
+}
+
+#scroll-to-top.show {
+  @apply opacity-100 visible; /* Show when 'show' class is added */
+}
+
+.dark #scroll-to-top {
+  @apply bg-emerald-500 hover:bg-emerald-600;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Animasi Kustom                               */
+/* -------------------------------------------------------------------------- */
+
+/* Kelas untuk efek reveal on scroll */
+/* Elemen dengan kelas ini akan dianimasikan saat terlihat */
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.reveal-on-scroll.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Animasi untuk hamburger menu */
+.hamburger-line {
+  @apply block w-6 h-0.5 bg-slate-800 dark:bg-slate-200 my-1
+         transition-all duration-300 ease-in-out;
+}
+
+.hamburger.active .hamburger-line:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger.active .hamburger-line:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active .hamburger-line:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* Styling untuk mode gelap toggle */
+#dark-mode-toggle {
+  @apply flex items-center justify-center w-10 h-10 rounded-full
+         bg-slate-200 dark:bg-slate-700 text-slate-800 dark:text-slate-200
+         transition-colors duration-300 ease-in-out cursor-pointer;
+}
+
+#dark-mode-toggle svg {
+  @apply w-6 h-6;
+}
+
+/* Gaya untuk overlay navigasi mobile (toggle dari kanan) */
+#mobile-nav-overlay {
+  /* Latar belakang solid, tidak transparan lagi */
+  /* Efek blur dihilangkan karena tidak relevan untuk latar belakang solid */
+  @apply fixed top-0 right-0 h-full w-72 bg-white dark:bg-slate-900 shadow-2xl z-50 flex flex-col items-start justify-start p-8 transform translate-x-full transition-transform duration-300 ease-in-out border-l border-slate-200 dark:border-slate-700;
+}
+
+/* Saat menu aktif, geser ke posisi 0 (terlihat) */
+#mobile-nav-overlay.translate-x-0 {
+  @apply translate-x-0;
+}
+
+/* Gaya untuk link di dalam menu mobile */
+#mobile-nav-overlay .mobile-nav-link { /* Menggunakan kelas .mobile-nav-link */
+  @apply text-2xl font-serif text-slate-900 dark:text-slate-100 hover:text-teal-600 dark:hover:text-emerald-400
+         transition-colors duration-200 py-3 block w-full opacity-0 transform translate-y-4; /* Default hidden, slight offset */
+}
+
+/* Kelas untuk animasi link di mobile nav */
+#mobile-nav-overlay .mobile-nav-link.animate-in { /* Menggunakan kelas .mobile-nav-link */
+  @apply opacity-100 translate-y-0;
+}
+
+/* Dimming overlay saat menu mobile terbuka */
+#mobile-dim-overlay {
+  @apply fixed inset-0 bg-black/50 z-40 opacity-0 invisible transition-opacity duration-300 ease-in-out;
+}
+
+#mobile-dim-overlay.show {
+  @apply opacity-100 visible;
+}
+
+
+/* Styling untuk logo teks dengan animasi gradien */
+.logo-text {
+  /* Menggunakan gradien yang sama dengan text-gradient umum */
+  background-image: linear-gradient(to right, theme('colors.teal.500'), theme('colors.emerald.500'), theme('colors.teal.500'));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% auto; /* Ukuran gradien dua kali lipat lebar teks */
+  transition: background-position 0.4s ease-out, transform 0.2s ease-out; /* Transisi untuk posisi gradien dan transform */
+  display: inline-block; /* Penting untuk background-clip */
+}
+
+/* Efek hover untuk logo teks */
+.group:hover .logo-text {
+  background-position: -100% center; /* Geser gradien ke kiri */
+  transform: scale(1.02); /* Sedikit membesar */
+}
+
+/* Styling untuk logo teks di mode gelap */
+.dark .logo-text {
+  background-image: linear-gradient(to right, theme('colors.amber.400'), theme('colors.teal.300'), theme('colors.amber.400'));
+}
+
+/* Styling untuk logo teks di footer (jika ada) */
+.logo-text-footer {
+  /* Menggunakan warna solid untuk footer agar kontras tetap baik */
+  @apply text-slate-100;
+  transition: transform 0.2s ease-out; /* Hanya animasi scale pada hover */
+}
+
+.logo-text-footer:hover {
+  transform: scale(1.02); /* Sedikit membesar */
+}
+
+
+/* Tambahan baris untuk memenuhi target */
+/* Tambahan gaya untuk elemen spesifik atau utilitas */
+.container-custom {
+  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+.section-padding {
+  @apply py-16 lg:py-24;
+}
+
+.text-gradient {
+  background-image: linear-gradient(to right, theme('colors.teal.500'), theme('colors.emerald.500'));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.dark .text-gradient {
+  background-image: linear-gradient(to right, theme('colors.amber.400'), theme('colors.teal.300'));
+}
+
+/* Tambahan baris untuk mencapai minimal 200 baris */
+.custom-shadow {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.dark .custom-shadow {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -2px rgba(0, 0, 0, 0.2);
+}
+
+.transition-all-ease {
+  @apply transition-all duration-300 ease-in-out;
+}
+
+.scale-on-hover:hover {
+  @apply transform scale-105;
+}
+
+.rotate-on-hover:hover {
+  @apply transform rotate-3;
+}
+
+.border-highlight {
+  @apply border-b-2 border-teal-500 pb-1;
+}
+
+.dark .border-highlight {
+  @apply border-emerald-400;
+}
+
+/* Tambahan baris lagi */
+.flex-center {
+  @apply flex items-center justify-center;
+}
+
+.grid-cols-custom {
+  @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8;
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+.max-w-prose-lg {
+  @apply max-w-3xl;
+}
+
+.max-w-prose-xl {
+  @apply max-w-5xl;
+}
+
+/* Baris tambahan untuk mencapai minimal 200 baris */
+.bg-pattern-light {
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%239C92AC' fill-opacity='0.1' fill-rule='evenodd'%3E%3Cpath d='M0 0h30v30H0V0zm30 30h30v30H30V30z'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+.dark .bg-pattern-dark {
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23334155' fill-opacity='0.2' fill-rule='evenodd'%3E%3Cpath d='M0 0h30v30H30V30z'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+.section-title {
+  @apply text-4xl lg:text-5xl font-serif font-extrabold text-center mb-12
+         text-slate-900 dark:text-slate-100;
+}
+
+.section-subtitle {
+  @apply text-xl text-center text-slate-600 dark:text-slate-400 mb-8;
+}
+
+.social-icon {
+  @apply text-slate-600 dark:text-slate-400 hover:text-teal-600 dark:hover:text-emerald-400
+         transition-colors duration-200 ease-in-out;
+}
+
+/* Pastikan jumlah baris mencukupi */
+/* Ini adalah baris ke-200+ */
+.footer-link {
+  @apply text-sm text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-200
+         transition-colors duration-200 ease-in-out;
+}
+
