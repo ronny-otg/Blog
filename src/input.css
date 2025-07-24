@@ -18,7 +18,7 @@
 html {
   scroll-behavior: smooth; /* Mengaktifkan smooth scrolling untuk link anchor */
   -webkit-font-smoothing: antialiased; /* Meningkatkan rendering font di WebKit */
-  -moz-osx-osx-font-smoothing: grayscale; /* Meningkatkan rendering font di Firefox */
+  -moz-osx-font-smoothing: grayscale; /* Meningkatkan rendering font di Firefox */
 }
 
 body {
@@ -159,8 +159,6 @@ a {
 
 /* Gaya untuk overlay navigasi mobile (toggle dari kanan) */
 #mobile-nav-overlay {
-  /* Latar belakang solid, tidak transparan lagi */
-  /* Efek blur dihilangkan karena tidak relevan untuk latar belakang solid */
   @apply fixed top-0 right-0 h-full w-72 bg-white dark:bg-slate-900 shadow-2xl z-50 flex flex-col items-start justify-start p-8 transform translate-x-full transition-transform duration-300 ease-in-out border-l border-slate-200 dark:border-slate-700;
 }
 
@@ -170,13 +168,13 @@ a {
 }
 
 /* Gaya untuk link di dalam menu mobile */
-#mobile-nav-overlay .mobile-nav-link { /* Menggunakan kelas .mobile-nav-link */
+#mobile-nav-overlay .mobile-nav-link {
   @apply text-2xl font-serif text-slate-900 dark:text-slate-100 hover:text-teal-600 dark:hover:text-emerald-400
-         transition-colors duration-200 py-3 block w-full opacity-0 transform translate-y-4; /* Default hidden, slight offset */
+         transition-colors duration-200 py-3 block w-full opacity-0 transform translate-y-4;
 }
 
 /* Kelas untuk animasi link di mobile nav */
-#mobile-nav-overlay .mobile-nav-link.animate-in { /* Menggunakan kelas .mobile-nav-link */
+#mobile-nav-overlay .mobile-nav-link.animate-in {
   @apply opacity-100 translate-y-0;
 }
 
@@ -195,53 +193,121 @@ a {
   100% { background-position: 100% center; } /* Bergeser dari kiri ke kanan */
 }
 
-/* Animasi gradien berjalan ala navbar YouTube */
-.logo-text-premium {
+/* Styling untuk logo teks dengan animasi gradien yang lebih modern dan elegan */
+.logo-text {
+  background-image: linear-gradient(to right, #2563EB, #9333EA, #EC4899, #2563EB, #9333EA, #EC4899);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 400% auto;
+  transition: transform 0.3s ease-out, text-shadow 0.3s ease-out;
   display: inline-block;
-  font-weight: bold;
-  font-size: 1.5rem;
-  background: linear-gradient(90deg, #2563eb, #7e22ce, #ec4899, #2563eb);
-  background-size: 300% auto;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: moveGradient 4s linear infinite;
-  text-shadow: 0 0 6px rgba(59, 130, 246, 0.4);
+  animation: gradient-walk 6s linear infinite;
+  text-shadow: 0px 0px 8px rgba(59, 130, 246, 0.5); /* blue-400 equivalent */
 }
 
-/* Styling hanya untuk dark mode */
-.dark .logo-text-premium {
-  background: linear-gradient(90deg, #38bdf8, #6366f1, #a855f7, #38bdf8);
-  background-size: 300% auto;
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  color: transparent;
-  animation: moveGradient 4s linear infinite;
-  text-shadow: 0 0 6px rgba(125, 211, 252, 0.5);
+/* Efek hover untuk logo teks */
+.group:hover .logo-text {
+  transform: scale(1.05);
+  text-shadow: 0px 0px 15px rgba(96, 165, 250, 0.8); /* blue-300 equivalent */
 }
 
-@keyframes moveGradient {
-  0% {
-    background-position: 0% center;
-  }
-  100% {
-    background-position: 100% center;
-  }
+/* Styling untuk logo teks di mode gelap */
+.dark .logo-text {
+  background-image: linear-gradient(to right, #38BDF8, #6366F1, #A855F7, #38BDF8, #6366F1, #A855F7);
+  text-shadow: 0px 0px 8px rgba(125, 211, 252, 0.6); /* sky-300 equivalent */
 }
+
+.dark .group:hover .logo-text {
+  text-shadow: 0px 0px 15px rgba(186, 230, 253, 0.9); /* sky-200 equivalent */
+}
+
 /* Styling untuk logo teks di footer (jika ada) */
 .logo-text-footer {
-  /* Menggunakan warna solid untuk footer agar kontras tetap baik */
   @apply text-slate-100;
-  transition: transform 0.2s ease-out; /* Hanya animasi scale pada hover */
+  transition: transform 0.2s ease-out;
 }
 
 .logo-text-footer:hover {
-  transform: scale(1.02); /* Sedikit membesar */
+  transform: scale(1.02);
 }
 
+/* -------------------------------------------------------------------------- */
+/* Loading Overlay Styles                               */
+/* -------------------------------------------------------------------------- */
 
-/* Tambahan baris untuk memenuhi target */
-/* Tambahan gaya untuk elemen spesifik atau utilitas */
+/* Animasi untuk efek pulsasi pada dot */
+@keyframes dot-pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.5);
+    opacity: 0.5;
+  }
+}
+
+/* Animasi untuk fade out overlay */
+@keyframes fade-out-overlay {
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+.loading-overlay {
+  @apply fixed inset-0 z-[9999] flex flex-col items-center justify-center
+         bg-slate-50 dark:bg-slate-900 transition-opacity duration-700 ease-out;
+  opacity: 1;
+  visibility: visible;
+}
+
+.loading-overlay.fade-out {
+  animation: fade-out-overlay 0.7s forwards;
+}
+
+.loading-overlay-content {
+  @apply flex flex-col items-center justify-center;
+}
+
+.loading-logo-text {
+  /* Menggunakan gradien yang sama dengan logo utama */
+  background-image: linear-gradient(to right, #2563EB, #9333EA, #EC4899, #2563EB);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% auto;
+  animation: gradient-walk 4s linear infinite; /* Animasi berjalan pada logo di loader */
+  text-shadow: 0px 0px 12px rgba(59, 130, 246, 0.7); /* blue-400 equivalent */
+  display: inline-block;
+  /* Font size from HTML: text-5xl md:text-6xl lg:text-7xl */
+}
+
+.dark .loading-logo-text {
+  background-image: linear-gradient(to right, #38BDF8, #6366F1, #A855F7, #38BDF8);
+  text-shadow: 0px 0px 12px rgba(125, 211, 252, 0.8); /* sky-300 equivalent */
+}
+
+.loading-dots {
+  @apply flex space-x-2 mt-4;
+}
+
+.loading-dots .dot {
+  @apply w-3 h-3 rounded-full bg-teal-600 dark:bg-emerald-400;
+  animation: dot-pulse 1.4s infinite ease-in-out;
+}
+
+.loading-dots .dot:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.loading-dots .dot:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Utilitas Tambahan                               */
+/* -------------------------------------------------------------------------- */
+
 .container-custom {
   @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
 }
@@ -251,16 +317,15 @@ a {
 }
 
 .text-gradient {
-  background-image: linear-gradient(to right, theme('colors.teal.500'), theme('colors.emerald.500'));
+  background-image: linear-gradient(to right, #14B8A6, #10B981); /* teal-500, emerald-500 */
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .dark .text-gradient {
-  background-image: linear-gradient(to right, theme('colors.amber.400'), theme('colors.teal.300'));
+  background-image: linear-gradient(to right, #FBBF24, #5EEAD4); /* amber-400, teal-300 */
 }
 
-/* Tambahan baris untuk mencapai minimal 200 baris */
 .custom-shadow {
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
 }
@@ -289,7 +354,6 @@ a {
   @apply border-emerald-400;
 }
 
-/* Tambahan baris lagi */
 .flex-center {
   @apply flex items-center justify-center;
 }
@@ -310,7 +374,6 @@ a {
   @apply max-w-5xl;
 }
 
-/* Baris tambahan untuk mencapai minimal 200 baris */
 .bg-pattern-light {
   background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%239C92AC' fill-opacity='0.1' fill-rule='evenodd'%3E%3Cpath d='M0 0h30v30H0V0zm30 30h30v30H30V30z'/%3E%3C/g%3E%3C/svg%3E");
 }
@@ -333,10 +396,7 @@ a {
          transition-colors duration-200 ease-in-out;
 }
 
-/* Pastikan jumlah baris mencukupi */
-/* Ini adalah baris ke-200+ */
 .footer-link {
   @apply text-sm text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-200
          transition-colors duration-200 ease-in-out;
 }
-

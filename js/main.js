@@ -37,6 +37,16 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
     };
+    //baru
+    window.addEventListener('load', () => {
+  const loadingOverlay = document.getElementById('loading-overlay');
+  if (loadingOverlay) {
+    loadingOverlay.classList.add('fade-out');
+    loadingOverlay.addEventListener('animationend', () => {
+      loadingOverlay.remove();
+    });
+  }
+});
 
     // Memeriksa preferensi tema dari localStorage saat halaman dimuat
     const savedTheme = localStorage.getItem('theme');

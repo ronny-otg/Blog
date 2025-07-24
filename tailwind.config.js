@@ -1,122 +1,80 @@
 // tailwind.config.js
-// Konfigurasi lengkap untuk Tailwind CSS pada proyek LogikaLiar.
-// Mendefinisikan warna kustom, font, dan plugin untuk fungsionalitas tambahan.
+const colors = require('tailwindcss/colors'); // Opsional: untuk referensi warna langsung jika diperlukan
 
-/** @type {import('tailwindcss').Config} */
 module.exports = {
-  // Mengonfigurasi file mana yang akan dipindai Tailwind untuk kelas-kelasnya.
-  // Ini penting agar Tailwind dapat mengoptimalkan ukuran file CSS akhir.
+  // Pastikan path konten Anda benar agar Tailwind memindai file HTML dan JS Anda
   content: [
-    "./index.html",
-    "./posts/**/*.html", // Pindai semua file HTML di dalam folder posts
-    "./js/**/*.js",      // Pindai file JavaScript untuk kelas dinamis (jika ada)
+    './index.html',
+    './posts/**/*.html',
+    './privacy-policy.html',
+    './terms-conditions.html',
+    './js/**/*.js',
   ],
-  // Mengaktifkan mode gelap berdasarkan kelas CSS, bukan preferensi sistem.
-  // Ini memungkinkan toggle manual untuk mode gelap.
-  darkMode: 'class',
+  darkMode: 'class', // Mengaktifkan dark mode berdasarkan kelas 'dark' pada elemen html
   theme: {
-    // Memperluas tema default Tailwind.
-    // Properti yang ditambahkan di sini akan digabungkan dengan tema default.
     extend: {
-      // Definisi warna kustom untuk branding LogikaLiar.
-      // Warna-warna ini memberikan tampilan premium dan elegan.
-      colors: {
-        // Palet warna slate untuk latar belakang, teks sekunder, dll.
-        slate: {
-          50: '#f8fafc',
-          100: '#f1f5f9',
-          200: '#e2e8f0',
-          300: '#cbd5e1',
-          400: '#94a3b8',
-          500: '#64748b',
-          600: '#475569',
-          700: '#334155',
-          800: '#1e293b',
-          900: '#0f172a', // Warna slate paling gelap, cocok untuk dark mode
-        },
-        // Palet warna teal, bisa digunakan untuk aksen atau elemen interaktif.
-        teal: {
-          50: '#f0fdfa',
-          100: '#ccfbf1',
-          200: '#99f6e4',
-          300: '#5eead4',
-          400: '#2dd4bf',
-          500: '#14b8a6', // Warna teal utama
-          600: '#0d9488',
-          700: '#0f766e',
-          800: '#115e59',
-          900: '#134e4a',
-        },
-        // Palet warna emerald, cocok untuk highlight atau status positif.
-        emerald: {
-          50: '#ecfdf5',
-          100: '#d1fae5',
-          200: '#a7f3d0',
-          300: '#6ee7b7',
-          400: '#34d399',
-          500: '#10b981', // Warna emerald utama
-          600: '#059669',
-          700: '#047857',
-          800: '#065f46',
-          900: '#064e3b',
-        },
-        // Palet warna amber, bisa untuk peringatan atau aksen hangat.
-        amber: {
-          50: '#fffbeb',
-          100: '#fef3c7',
-          200: '#fde68a',
-          300: '#fcd34d',
-          400: '#fbbf24',
-          500: '#f59e0b', // Warna amber utama
-          600: '#d97706',
-          700: '#b45309',
-          800: '#92400e',
-          900: '#78350f',
-        },
-      },
-      // Definisi font keluarga kustom.
-      // Font serif untuk judul memberikan kesan mewah, sans-serif untuk konten.
+      // Menambahkan font kustom yang digunakan di proyek Anda
       fontFamily: {
-        // Contoh: 'Merriweather', 'Georgia', 'serif'
-        serif: ['Merriweather', 'Georgia', 'serif'],
-        // Contoh: 'Inter', 'Arial', 'sans-serif'
-        sans: ['Inter', 'Arial', 'sans-serif'],
+        sans: ['Inter', 'sans-serif'],
+        serif: ['Merriweather', 'serif'],
       },
-      // Definisi animasi kustom.
-      // Digunakan untuk efek reveal on scroll dan transisi lainnya.
-      animation: {
-        'fade-in-up': 'fade-in-up 0.6s ease-out forwards',
-        'fade-in': 'fade-in 0.6s ease-out forwards',
-      },
-      // Definisi keyframes untuk animasi kustom.
-      keyframes: {
-        'fade-in-up': {
-          '0%': {
-            opacity: '0',
-            transform: 'translateY(20px)',
-          },
-          '100%': {
-            opacity: '1',
-            transform: 'translateY(0)',
-          },
-        },
-        'fade-in': {
-          '0%': {
-            opacity: '0',
-          },
-          '100%': {
-            opacity: '1',
-          },
-        },
+      // Anda bisa memperluas palet warna di sini jika ada warna kustom
+      colors: {
+        // Contoh: 'custom-blue': '#1a2b3c',
       },
     },
   },
-  // Plugin Tailwind CSS.
-  // Menambahkan fungsionalitas seperti formulir dasar atau rasio aspek.
   plugins: [
-    // require('@tailwindcss/forms'), // Contoh plugin untuk styling form
-    // require('@tailwindcss/typography'), // Contoh plugin untuk styling markdown
+    // Ini adalah plugin kustom untuk mendefinisikan utilitas CSS kompleks
+    function ({ addUtilities, theme }) {
+      const newUtilities = {
+        // Utilitas untuk gradien dan bayangan teks logo utama (light mode)
+        '.logo-gradient-light': {
+          backgroundImage: `linear-gradient(to right, ${theme('colors.blue.600')}, ${theme('colors.purple.600')}, ${theme('colors.pink.500')}, ${theme('colors.blue.600')}, ${theme('colors.purple.600')}, ${theme('colors.pink.500')})`,
+          '-webkit-background-clip': 'text',
+          '-webkit-text-fill-color': 'transparent',
+          'background-size': '400% auto',
+          animation: 'gradient-walk 6s linear infinite',
+          'text-shadow': `0px 0px 8px rgba(${theme('colors.blue.400')}, 0.5)`,
+        },
+        // Utilitas untuk gradien dan bayangan teks logo utama (dark mode)
+        '.logo-gradient-dark': {
+          backgroundImage: `linear-gradient(to right, ${theme('colors.sky.400')}, ${theme('colors.indigo.400')}, ${theme('colors.purple.400')}, ${theme('colors.sky.400')}, ${theme('colors.indigo.400')}, ${theme('colors.purple.400')})`,
+          '-webkit-background-clip': 'text',
+          '-webkit-text-fill-color': 'transparent',
+          'background-size': '400% auto',
+          animation: 'gradient-walk 6s linear infinite',
+          'text-shadow': `0px 0px 8px rgba(${theme('colors.sky.300')}, 0.6)`,
+        },
+        // Utilitas untuk bayangan teks logo saat hover (light mode)
+        '.logo-shadow-light-hover': {
+          'text-shadow': `0px 0px 15px rgba(${theme('colors.blue.300')}, 0.8)`,
+        },
+        // Utilitas untuk bayangan teks logo saat hover (dark mode)
+        '.logo-shadow-dark-hover': {
+          'text-shadow': `0px 0px 15px rgba(${theme('colors.sky.200')}, 0.9)`,
+        },
+        // Utilitas untuk gradien dan bayangan teks logo di overlay loading (light mode)
+        '.loading-logo-gradient-light': {
+          backgroundImage: `linear-gradient(to right, ${theme('colors.blue.600')}, ${theme('colors.purple.600')}, ${theme('colors.pink.500')}, ${theme('colors.blue.600')})`,
+          '-webkit-background-clip': 'text',
+          '-webkit-text-fill-color': 'transparent',
+          'background-size': '200% auto',
+          animation: 'gradient-walk 4s linear infinite',
+          'text-shadow': `0px 0px 12px rgba(${theme('colors.blue.400')}, 0.7)`,
+        },
+        // Utilitas untuk gradien dan bayangan teks logo di overlay loading (dark mode)
+        '.loading-logo-gradient-dark': {
+          backgroundImage: `linear-gradient(to right, ${theme('colors.sky.400')}, ${theme('colors.indigo.400')}, ${theme('colors.purple.400')}, ${theme('colors.sky.400')})`,
+          '-webkit-background-clip': 'text',
+          '-webkit-text-fill-color': 'transparent',
+          'background-size': '200% auto',
+          animation: 'gradient-walk 4s linear infinite',
+          'text-shadow': `0px 0px 12px rgba(${theme('colors.sky.300')}, 0.8)`,
+        },
+      };
+      // Menambahkan utilitas baru ini agar responsif dan dapat digunakan dengan pseudo-class hover
+      addUtilities(newUtilities, ['responsive', 'hover']);
+    },
   ],
-}
-
-
+};

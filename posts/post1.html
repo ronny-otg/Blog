@@ -20,27 +20,47 @@
     <!-- Font Awesome untuk ikon -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" xintegrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <!-- Link ke CSS yang dihasilkan oleh TailwindCSS -->
+    <!-- Link ke CSS yang dihasilkan oleh TailwindCSS (path relatif) -->
     <link rel="stylesheet" href="../dist/output.css">
 </head>
 <body class="font-sans text-slate-800 bg-slate-50 antialiased transition-colors duration-300 ease-in-out">
 
-    <!-- Header & Navigasi (Sama seperti index.html) -->
+    <!-- Loading Overlay -->
+    <!-- Overlay ini akan menutupi seluruh layar saat halaman dimuat, menampilkan logo animasi. -->
+    <div id="loading-overlay" class="loading-overlay">
+        <div class="loading-overlay-content">
+            <!-- Logo teks di loading overlay menggunakan kelas utilitas baru dari tailwind.config.js -->
+            <span class="font-serif text-5xl md:text-6xl lg:text-7xl font-extrabold loading-logo-gradient-light dark:loading-logo-gradient-dark">LogikaLiar</span>
+            <div class="loading-dots mt-8">
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header & Navigasi (Sama seperti index.html, dengan path relatif yang disesuaikan) -->
     <header id="navbar" class="fixed top-0 left-0 right-0 z-50 py-4 transition-all duration-300 ease-in-out">
         <div class="container-custom flex items-center justify-between">
-            <a href="../index.html" class="flex items-center space-x-2">
-                <span class="logo-text-premium">LogikaLiar</span>
+            <!-- Logo LogikaLiar (sekarang teks dengan animasi dan kelas utilitas baru dari tailwind.config.js) -->
+            <a href="../index.html" class="flex items-center space-x-2 group">
+                <span class="font-serif text-2xl font-extrabold logo-gradient-light dark:logo-gradient-dark group-hover:logo-shadow-light-hover dark:group-hover:logo-shadow-dark-hover">LogikaLiar</span>
             </a>
+
+            <!-- Navigasi Desktop -->
             <nav class="hidden md:flex items-center space-x-8">
                 <a href="../index.html" class="text-slate-700 dark:text-slate-300 hover:text-teal-600 dark:hover:text-emerald-400 font-medium transition-colors duration-200">Beranda</a>
                 <a href="../index.html#about" class="text-slate-700 dark:text-slate-300 hover:text-teal-600 dark:hover:text-emerald-400 font-medium transition-colors duration-200">Tentang</a>
                 <a href="../index.html#posts" class="text-slate-700 dark:text-slate-300 hover:text-teal-600 dark:hover:text-emerald-400 font-medium transition-colors duration-200">Artikel</a>
                 <a href="../index.html#contact" class="text-slate-700 dark:text-slate-300 hover:text-teal-600 dark:hover:text-emerald-400 font-medium transition-colors duration-200">Kontak</a>
+                <!-- Dark Mode Toggle -->
                 <button id="dark-mode-toggle" class="flex-center w-10 h-10 rounded-full bg-slate-200 dark:bg-slate-700 text-slate-800 dark:text-slate-200 transition-colors duration-300 ease-in-out" aria-label="Toggle dark mode">
                     <i class="fas fa-moon hidden dark:block"></i>
                     <i class="fas fa-sun block dark:hidden"></i>
                 </button>
             </nav>
+
+            <!-- Hamburger Menu (Mobile) -->
             <div class="md:hidden flex items-center space-x-4">
                 <button id="dark-mode-toggle-mobile" class="flex-center w-10 h-10 rounded-full bg-slate-200 dark:bg-slate-700 text-slate-800 dark:text-slate-200 transition-colors duration-300 ease-in-out" aria-label="Toggle dark mode">
                     <i class="fas fa-moon hidden dark:block"></i>
@@ -53,12 +73,14 @@
                 </button>
             </div>
         </div>
+
         <!-- Mobile Nav Overlay -->
-        <nav id="mobile-nav-overlay" class="fixed top-0 right-0 h-full w-72 bg-white/95 dark:bg-slate-900/95 backdrop-blur-lg shadow-xl z-50 flex flex-col items-start justify-start p-8 transform translate-x-full transition-transform duration-300 ease-in-out md:hidden">
+        <nav id="mobile-nav-overlay" class="fixed top-0 right-0 h-full w-72 bg-white dark:bg-slate-900 shadow-2xl z-50 flex flex-col items-start justify-start p-8 transform translate-x-full transition-transform duration-300 ease-in-out border-l border-slate-200 dark:border-slate-700 md:hidden">
             <!-- Header di dalam menu mobile -->
             <div class="flex items-center justify-between w-full mb-8">
                 <a href="../index.html" class="flex items-center space-x-2">
-                    <span class="logo-text-premium">LogikaLiar</span>
+                    <!-- Logo teks di mobile nav menggunakan kelas utilitas baru -->
+                    <span class="font-serif text-2xl font-extrabold logo-gradient-light dark:logo-gradient-dark">LogikaLiar</span>
                 </a>
                 <button id="close-mobile-menu" class="text-slate-800 dark:text-slate-200 text-3xl hover:text-teal-600 dark:hover:text-emerald-400 transition-colors duration-200" aria-label="Close mobile menu">
                     <i class="fas fa-times"></i>
@@ -161,12 +183,12 @@
         </article>
     </main>
 
-    <!-- Footer (Sama seperti index.html) -->
+    <!-- Footer (Path relatif disesuaikan) -->
     <footer class="bg-slate-900 dark:bg-slate-950 text-slate-400 py-12 lg:py-16">
         <div class="container-custom grid grid-cols-1 md:grid-cols-3 gap-8">
             <div class="col-span-1">
                 <a href="../index.html" class="flex items-center space-x-2 mb-4">
-                    <span class="logo-text-premium">LogikaLiar</span>
+                    <span class="font-serif text-2xl font-extrabold text-slate-100 logo-text-footer">LogikaLiar</span>
                 </a>
                 <p class="text-sm leading-relaxed mb-4">
                     Menjelajahi kedalaman pikiran, psikologi, filosofi, dan pemikiran liar untuk kehidupan yang lebih bermakna.
@@ -185,8 +207,8 @@
                     <li><a href="../index.html" class="footer-link">Beranda</a></li>
                     <li><a href="../index.html#about" class="footer-link">Tentang Kami</a></li>
                     <li><a href="../index.html#posts" class="footer-link">Artikel</a></li>
-                    <li><a href="#" class="footer-link">Kebijakan Privasi</a></li>
-                    <li><a href="#" class="footer-link">Syarat & Ketentuan</a></li>
+                    <li><a href="../privacy-policy.html" class="footer-link">Kebijakan Privasi</a></li>
+                    <li><a href="../terms-conditions.html" class="footer-link">Syarat & Ketentuan</a></li>
                 </ul>
             </div>
 
@@ -207,8 +229,7 @@
         <i class="fas fa-arrow-up"></i>
     </button>
 
-    <!-- Link ke JavaScript kustom -->
+    <!-- Link ke JavaScript kustom (path relatif) -->
     <script src="../js/main.js"></script>
 </body>
 </html>
-

@@ -44,14 +44,27 @@
 </head>
 <body class="font-sans text-slate-800 bg-slate-50 antialiased transition-colors duration-300 ease-in-out">
 
+    <!-- Loading Overlay -->
+    <!-- Overlay ini akan menutupi seluruh layar saat halaman dimuat, menampilkan logo animasi. -->
+    <div id="loading-overlay" class="loading-overlay">
+        <div class="loading-overlay-content">
+            <!-- Logo teks di loading overlay menggunakan kelas utilitas baru dari tailwind.config.js -->
+            <span class="font-serif text-5xl md:text-6xl lg:text-7xl font-extrabold loading-logo-gradient-light dark:loading-logo-gradient-dark">LogikaLiar</span>
+            <div class="loading-dots mt-8">
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+        </div>
+    </div>
+
     <!-- Header & Navigasi -->
-    <!-- Menghapus kelas bg-white dan dark:bg-slate-900 dari sini. -->
-    <!-- Navbar akan sepenuhnya transparan secara default, dan navbar-sticky akan menambahkan efek saat di-scroll. -->
     <header id="navbar" class="fixed top-0 left-0 right-0 z-50 py-4 transition-all duration-300 ease-in-out">
         <div class="container-custom flex items-center justify-between">
-<a href="#" class="group text-2xl font-bold">
-  <span class="logo-text-premium">LogikaLiar</span>
-</a>
+            <!-- Logo LogikaLiar (sekarang teks dengan animasi dan kelas utilitas baru dari tailwind.config.js) -->
+            <a href="index.html" class="flex items-center space-x-2 reveal-on-scroll group">
+                <span class="font-serif text-2xl font-extrabold logo-gradient-light dark:logo-gradient-dark group-hover:logo-shadow-light-hover dark:group-hover:logo-shadow-dark-hover">LogikaLiar</span>
+            </a>
 
             <!-- Navigasi Desktop -->
             <nav class="hidden md:flex items-center space-x-8">
@@ -85,7 +98,8 @@
             <!-- Header di dalam menu mobile -->
             <div class="flex items-center justify-between w-full mb-8">
                 <a href="index.html" class="flex items-center space-x-2">
-                    <span class="logo-text-premium">LogikaLiar</span>
+                    <!-- Logo teks di mobile nav menggunakan kelas utilitas baru -->
+                    <span class="font-serif text-2xl font-extrabold logo-gradient-light dark:logo-gradient-dark">LogikaLiar</span>
                 </a>
                 <button id="close-mobile-menu" class="text-slate-800 dark:text-slate-200 text-3xl hover:text-teal-600 dark:hover:text-emerald-400 transition-colors duration-200" aria-label="Close mobile menu">
                     <i class="fas fa-times"></i>
@@ -300,7 +314,7 @@
         <div class="container-custom grid grid-cols-1 md:grid-cols-3 gap-8">
             <div class="col-span-1 reveal-on-scroll">
                 <a href="index.html" class="flex items-center space-x-2 mb-4">
-                    <span class="logo-text-premium">LogikaLiar</span>
+                    <span class="font-serif text-2xl font-extrabold text-slate-100 logo-text-footer">LogikaLiar</span>
                 </a>
                 <p class="text-sm leading-relaxed mb-4">
                     Menjelajahi kedalaman pikiran, psikologi, filosofi, dan pemikiran liar untuk kehidupan yang lebih bermakna.
@@ -332,7 +346,7 @@
             </div>
         </div>
         <div class="container-custom text-center text-sm text-slate-500 mt-12 pt-8 border-t border-slate-700 dark:border-slate-800 reveal-on-scroll" data-delay="300">
-            &copy; 2025 LogikaLiar. Hak Cipta Dilindungi Undang-Undang. Didesain oleh Ronny.
+            &copy; 2025 LogikaLiar. Hak Cipta Dilindungi Undang-Undang. Didesain oleh AI Design Agency.
         </div>
     </footer>
 
