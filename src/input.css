@@ -166,7 +166,7 @@ a {
 
 /* Saat menu aktif, geser ke posisi 0 (terlihat) */
 #mobile-nav-overlay.translate-x-0 {
-  @apply translate-x-0;
+  transform: translateX(0);
 }
 
 /* Gaya untuk link di dalam menu mobile */
@@ -189,29 +189,45 @@ a {
   @apply opacity-100 visible;
 }
 
+/* Definisi animasi keyframes untuk pergeseran gradien yang berjalan */
+@keyframes gradient-walk {
+  0% { background-position: 0% center; }
+  100% { background-position: 100% center; } /* Bergeser dari kiri ke kanan */
+}
 
-/* Styling untuk logo teks dengan animasi gradien */
-.logo-text {
-  /* Menggunakan gradien yang sama dengan text-gradient umum */
-  background-image: linear-gradient(to right, theme('colors.teal.500'), theme('colors.emerald.500'), theme('colors.teal.500'));
+/* Animasi gradien berjalan ala navbar YouTube */
+.logo-text-premium {
+  display: inline-block;
+  font-weight: bold;
+  font-size: 1.5rem;
+  background: linear-gradient(90deg, #2563eb, #7e22ce, #ec4899, #2563eb);
+  background-size: 300% auto;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  background-size: 200% auto; /* Ukuran gradien dua kali lipat lebar teks */
-  transition: background-position 0.4s ease-out, transform 0.2s ease-out; /* Transisi untuk posisi gradien dan transform */
-  display: inline-block; /* Penting untuk background-clip */
+  animation: moveGradient 4s linear infinite;
+  text-shadow: 0 0 6px rgba(59, 130, 246, 0.4);
 }
 
-/* Efek hover untuk logo teks */
-.group:hover .logo-text {
-  background-position: -100% center; /* Geser gradien ke kiri */
-  transform: scale(1.02); /* Sedikit membesar */
+/* Styling hanya untuk dark mode */
+.dark .logo-text-premium {
+  background: linear-gradient(90deg, #38bdf8, #6366f1, #a855f7, #38bdf8);
+  background-size: 300% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  animation: moveGradient 4s linear infinite;
+  text-shadow: 0 0 6px rgba(125, 211, 252, 0.5);
 }
 
-/* Styling untuk logo teks di mode gelap */
-.dark .logo-text {
-  background-image: linear-gradient(to right, theme('colors.amber.400'), theme('colors.teal.300'), theme('colors.amber.400'));
+@keyframes moveGradient {
+  0% {
+    background-position: 0% center;
+  }
+  100% {
+    background-position: 100% center;
+  }
 }
-
 /* Styling untuk logo teks di footer (jika ada) */
 .logo-text-footer {
   /* Menggunakan warna solid untuk footer agar kontras tetap baik */

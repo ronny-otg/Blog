@@ -1,0 +1,219 @@
+<!-- terms-conditions.html
+     Halaman Syarat dan Ketentuan untuk blog LogikaLiar.
+     Mengikuti gaya dan struktur yang konsisten dengan homepage.
+-->
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Syarat dan Ketentuan - LogikaLiar</title>
+    <meta name="description" content="Syarat dan Ketentuan penggunaan layanan LogikaLiar.">
+    <meta name="keywords" content="syarat dan ketentuan, terms of service, penggunaan layanan, LogikaLiar">
+    <meta name="author" content="LogikaLiar Team">
+
+    <!-- Google Fonts: Merriweather (serif) dan Inter (sans-serif) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome untuk ikon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" xintegrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Link ke CSS yang dihasilkan oleh TailwindCSS -->
+    <link rel="stylesheet" href="./dist/output.css">
+</head>
+<body class="font-sans text-slate-800 bg-slate-50 antialiased transition-colors duration-300 ease-in-out">
+
+    <!-- Header & Navigasi -->
+    <header id="navbar" class="fixed top-0 left-0 right-0 z-50 py-4 transition-all duration-300 ease-in-out">
+        <div class="container-custom flex items-center justify-between">
+            <a href="index.html" class="flex items-center space-x-2 group">
+                <span class="logo-text-premium">LogikaLiar</span>
+            </a>
+            <nav class="hidden md:flex items-center space-x-8">
+                <a href="index.html" class="text-slate-700 dark:text-slate-300 hover:text-teal-600 dark:hover:text-emerald-400 font-medium transition-colors duration-200">Beranda</a>
+                <a href="index.html#about" class="text-slate-700 dark:text-slate-300 hover:text-teal-600 dark:hover:text-emerald-400 font-medium transition-colors duration-200">Tentang</a>
+                <a href="index.html#posts" class="text-slate-700 dark:text-slate-300 hover:text-teal-600 dark:hover:text-emerald-400 font-medium transition-colors duration-200">Artikel</a>
+                <a href="index.html#contact" class="text-slate-700 dark:text-slate-300 hover:text-teal-600 dark:hover:text-emerald-400 font-medium transition-colors duration-200">Kontak</a>
+                <button id="dark-mode-toggle" class="flex-center w-10 h-10 rounded-full bg-slate-200 dark:bg-slate-700 text-slate-800 dark:text-slate-200 transition-colors duration-300 ease-in-out" aria-label="Toggle dark mode">
+                    <i class="fas fa-moon hidden dark:block"></i>
+                    <i class="fas fa-sun block dark:hidden"></i>
+                </button>
+            </nav>
+            <div class="md:hidden flex items-center space-x-4">
+                <button id="dark-mode-toggle-mobile" class="flex-center w-10 h-10 rounded-full bg-slate-200 dark:bg-slate-700 text-slate-800 dark:text-slate-200 transition-colors duration-300 ease-in-out" aria-label="Toggle dark mode">
+                    <i class="fas fa-moon hidden dark:block"></i>
+                    <i class="fas fa-sun block dark:hidden"></i>
+                </button>
+                <button id="hamburger-menu" class="hamburger focus:outline-none" aria-label="Open mobile menu">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Nav Overlay -->
+        <nav id="mobile-nav-overlay" class="fixed top-0 right-0 h-full w-72 bg-white dark:bg-slate-900 shadow-2xl z-50 flex flex-col items-start justify-start p-8 transform translate-x-full transition-transform duration-300 ease-in-out border-l border-slate-200 dark:border-slate-700 md:hidden">
+            <div class="flex items-center justify-between w-full mb-8">
+                <a href="index.html" class="flex items-center space-x-2">
+                    <span class="logo-text-premium">LogikaLiar</span>
+                </a>
+                <button id="close-mobile-menu" class="text-slate-800 dark:text-slate-200 text-3xl hover:text-teal-600 dark:hover:text-emerald-400 transition-colors duration-200" aria-label="Close mobile menu">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+
+            <div class="flex flex-col space-y-4 w-full">
+                <a href="index.html" class="mobile-nav-link" data-target="home" data-delay="50">Beranda</a>
+                <a href="index.html#about" class="mobile-nav-link" data-target="about" data-delay="100">Tentang</a>
+                <a href="index.html#posts" class="mobile-nav-link" data-target="posts" data-delay="150">Artikel</a>
+                <a href="index.html#contact" class="mobile-nav-link" data-target="contact" data-delay="200">Kontak</a>
+            </div>
+        </nav>
+        <!-- Dimming Overlay for Mobile Menu -->
+        <div id="mobile-dim-overlay" class="hidden md:hidden"></div>
+    </header>
+
+    <main class="pt-24 pb-16 lg:pt-32 lg:pb-24">
+        <article class="container-custom max-w-prose-xl mx-auto">
+            <header class="text-center mb-12 reveal-on-scroll">
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-serif font-extrabold leading-tight text-slate-900 dark:text-slate-100 mb-4">
+                    Syarat dan Ketentuan
+                </h1>
+                <p class="text-slate-600 dark:text-slate-400 text-md">
+                    Terakhir Diperbarui: 24 Juli 2025
+                </p>
+            </header>
+
+            <section class="prose dark:prose-invert prose-lg max-w-none mx-auto text-slate-700 dark:text-slate-300 reveal-on-scroll" data-delay="100">
+                <p class="lead text-xl font-medium text-slate-800 dark:text-slate-200 mb-6">
+                    Selamat datang di LogikaLiar! Syarat dan Ketentuan ini ("Syarat", "Syarat dan Ketentuan") mengatur penggunaan situs web kami yang berlokasi di LogikaLiar.com ("Layanan") yang dioperasikan oleh LogikaLiar ("kami", "milik kami", atau "kita").
+                </p>
+                <p>
+                    Akses dan penggunaan Layanan Anda dikondisikan pada penerimaan dan kepatuhan Anda terhadap Syarat ini. Syarat ini berlaku untuk semua pengunjung, pengguna, dan orang lain yang mengakses atau menggunakan Layanan.
+                </p>
+                <p>
+                    Dengan mengakses atau menggunakan Layanan, Anda setuju untuk terikat oleh Syarat ini. Jika Anda tidak setuju dengan bagian mana pun dari syarat, maka Anda tidak boleh mengakses Layanan.
+                </p>
+
+                <h2>Hak Kekayaan Intelektual</h2>
+                <p>
+                    Layanan dan konten aslinya, fitur, dan fungsionalitas adalah dan akan tetap menjadi milik eksklusif LogikaLiar dan pemberi lisensinya. Layanan dilindungi oleh hak cipta, merek dagang, dan undang-undang lainnya baik di Indonesia maupun negara asing. Merek dagang kami tidak boleh digunakan sehubungan dengan produk atau layanan apa pun tanpa persetujuan tertulis sebelumnya dari LogikaLiar.
+                </p>
+
+                <h2>Tautan ke Situs Web Lain</h2>
+                <p>
+                    Layanan kami mungkin berisi tautan ke situs web atau layanan pihak ketiga yang tidak dimiliki atau dikendalikan oleh LogikaLiar.
+                </p>
+                <p>
+                    LogikaLiar tidak memiliki kendali atas, dan tidak bertanggung jawab atas, konten, kebijakan privasi, atau praktik situs web atau layanan pihak ketiga mana pun. Anda selanjutnya mengakui dan menyetujui bahwa LogikaLiar tidak akan bertanggung jawab, secara langsung atau tidak langsung, atas kerugian atau kerusakan yang disebabkan atau diduga disebabkan oleh atau sehubungan dengan penggunaan atau ketergantungan pada konten, barang, atau layanan yang tersedia di atau melalui situs web atau layanan tersebut.
+                </p>
+                <p>
+                    Kami sangat menyarankan Anda untuk membaca syarat dan ketentuan serta kebijakan privasi situs web atau layanan pihak ketiga mana pun yang Anda kunjungi.
+                </p>
+
+                <h2>Pengakhiran</h2>
+                <p>
+                    Kami dapat mengakhiri atau menangguhkan akses Anda ke Layanan kami segera, tanpa pemberitahuan atau kewajiban sebelumnya, untuk alasan apa pun, termasuk tanpa batasan jika Anda melanggar Syarat.
+                </p>
+                <p>
+                    Semua ketentuan Syarat yang menurut sifatnya harus tetap berlaku setelah pengakhiran akan tetap berlaku setelah pengakhiran, termasuk, tanpa batasan, ketentuan kepemilikan, penolakan jaminan, ganti rugi, dan batasan tanggung jawab.
+                </p>
+
+                <h2>Batasan Tanggung Jawab</h2>
+                <p>
+                    Dalam keadaan apa pun LogikaLiar, direktur, karyawan, mitra, agen, pemasok, atau afiliasinya tidak akan bertanggung jawab atas kerugian tidak langsung, insidental, khusus, konsekuensial, atau hukuman, termasuk tanpa batasan, kehilangan keuntungan, data, penggunaan, niat baik, atau kerugian tidak berwujud lainnya, yang dihasilkan dari (i) akses Anda ke atau penggunaan atau ketidakmampuan untuk mengakses atau menggunakan Layanan; (ii) perilaku atau konten pihak ketiga mana pun di Layanan; (iii) konten yang diperoleh dari Layanan; dan (iv) akses, penggunaan, atau perubahan transmisi atau konten Anda yang tidak sah, baik berdasarkan garansi, kontrak, tort (termasuk kelalaian), atau teori hukum lainnya, baik kami telah diberitahu tentang kemungkinan kerusakan tersebut atau tidak, dan bahkan jika obat yang ditetapkan di sini ditemukan gagal dari tujuan esensialnya.
+                </p>
+
+                <h2>Penolakan</h2>
+                <p>
+                    Penggunaan Layanan Anda adalah risiko tunggal Anda. Layanan disediakan atas dasar "SEBAGAIMANA ADANYA" dan "SEBAGAIMANA TERSEDIA." Layanan disediakan tanpa jaminan dalam bentuk apa pun, baik tersurat maupun tersirat, termasuk, namun tidak terbatas pada, jaminan tersirat tentang kelayakan untuk diperdagangkan, kesesuaian untuk tujuan tertentu, non-pelanggaran, atau kinerja.
+                </p>
+                <p>
+                    LogikaLiar, anak perusahaan, afiliasi, dan pemberi lisensinya tidak menjamin bahwa a) Layanan akan berfungsi tanpa gangguan, aman, atau tersedia pada waktu atau lokasi tertentu; b) setiap kesalahan atau cacat akan diperbaiki; c) Layanan bebas dari virus atau komponen berbahaya lainnya; atau d) hasil penggunaan Layanan akan memenuhi kebutuhan Anda.
+                </p>
+
+                <h2>Hukum yang Mengatur</h2>
+                <p>
+                    Syarat ini akan diatur dan ditafsirkan sesuai dengan hukum Indonesia, tanpa memperhatikan pertentangan ketentuan hukumnya.
+                </p>
+                <p>
+                    Kegagalan kami untuk menegakkan hak atau ketentuan apa pun dari Syarat ini tidak akan dianggap sebagai pengabaian hak-hak tersebut. Jika ada ketentuan Syarat ini yang dianggap tidak valid atau tidak dapat diberlakukan oleh pengadilan, ketentuan lainnya dari Syarat ini akan tetap berlaku. Syarat ini merupakan keseluruhan perjanjian antara kami mengenai Layanan kami, dan menggantikan serta mengganti setiap perjanjian sebelumnya yang mungkin kami miliki antara kami mengenai Layanan.
+                </p>
+
+                <h2>Perubahan Syarat</h2>
+                <p>
+                    Kami berhak, atas kebijakan kami sendiri, untuk memodifikasi atau mengganti Syarat ini kapan saja. Jika revisi adalah materi, kami akan mencoba memberikan pemberitahuan setidaknya 30 hari sebelum syarat baru berlaku. Apa yang merupakan perubahan materi akan ditentukan atas kebijakan kami sendiri.
+                </p>
+                <p>
+                    Dengan terus mengakses atau menggunakan Layanan kami setelah revisi tersebut menjadi efektif, Anda setuju untuk terikat oleh syarat yang direvisi. Jika Anda tidak setuju dengan syarat baru, Anda harus berhenti menggunakan situs web.
+                </p>
+
+                <h2>Hubungi Kami</h2>
+                <p>Jika Anda memiliki pertanyaan tentang Syarat ini, silakan hubungi kami:</p>
+                <ul>
+                    <li>Melalui email: <a href="mailto:info@logikaliar.com">info@logikaliar.com</a></li>
+                    <li>Dengan mengunjungi halaman ini di situs web kami: <a href="index.html#contact">LogikaLiar.com/kontak</a></li>
+                </ul>
+            </section>
+
+            <footer class="mt-16 pt-8 border-t border-slate-200 dark:border-slate-700 text-center reveal-on-scroll" data-delay="200">
+                <p class="text-sm text-slate-600 dark:text-slate-400 mb-4">
+                    Kembali ke <a href="index.html" class="text-teal-600 dark:text-emerald-400 hover:underline">Beranda</a>.
+                </p>
+                <a href="index.html" class="btn-primary">Kembali ke Beranda</a>
+            </footer>
+        </article>
+    </main>
+
+    <!-- Footer (Sama seperti index.html, perlu disesuaikan path relatif) -->
+    <footer class="bg-slate-900 dark:bg-slate-950 text-slate-400 py-12 lg:py-16">
+        <div class="container-custom grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="col-span-1">
+                <a href="index.html" class="flex items-center space-x-2 mb-4">
+                    <span class="logo-text-premiumr">LogikaLiar</span>
+                </a>
+                <p class="text-sm leading-relaxed mb-4">
+                    Menjelajahi kedalaman pikiran, psikologi, filosofi, dan pemikiran liar untuk kehidupan yang lebih bermakna.
+                </p>
+                <div class="flex space-x-4">
+                    <a href="https://facebook.com/logikaliar" target="_blank" class="social-icon" aria-label="Facebook"><i class="fab fa-facebook-f text-xl"></i></a>
+                    <a href="https://twitter.com/logikaliar" target="_blank" class="social-icon" aria-label="Twitter"><i class="fab fa-twitter text-xl"></i></a>
+                    <a href="https://instagram.com/logikaliar" target="_blank" class="social-icon" aria-label="Instagram"><i class="fab fa-instagram text-xl"></i></a>
+                    <a href="https://linkedin.com/company/logikaliar" target="_blank" class="social-icon" aria-label="LinkedIn"><i class="fab fa-linkedin-in text-xl"></i></a>
+                </div>
+            </div>
+
+            <div class="col-span-1">
+                <h3 class="text-xl font-serif font-semibold text-slate-100 mb-4">Navigasi Cepat</h3>
+                <ul class="space-y-2">
+                    <li><a href="index.html" class="footer-link">Beranda</a></li>
+                    <li><a href="index.html#about" class="footer-link">Tentang Kami</a></li>
+                    <li><a href="index.html#posts" class="footer-link">Artikel</a></li>
+                    <li><a href="privacy-policy.html" class="footer-link">Kebijakan Privasi</a></li>
+                    <li><a href="terms-conditions.html" class="footer-link">Syarat & Ketentuan</a></li> <!-- Diperbarui -->
+                </ul>
+            </div>
+
+            <div class="col-span-1">
+                <h3 class="text-xl font-serif font-semibold text-slate-100 mb-4">Hubungi Kami</h3>
+                <p class="text-sm mb-2">Email: <a href="mailto:info@logikaliar.com" class="footer-link">info@logikaliar.com</a></p>
+                <p class="text-sm mb-2">Telepon: <a href="tel:+6281234567890" class="footer-link">+62 812 3456 7890</a></p>
+                <p class="text-sm">Alamat: Jl. Pemikiran Kritis No. 1, Jakarta, Indonesia</p>
+            </div>
+        </div>
+        <div class="container-custom text-center text-sm text-slate-500 mt-12 pt-8 border-t border-slate-700 dark:border-slate-800">
+            &copy; 2025 LogikaLiar. Hak Cipta Dilindungi Undang-Undang. Didesain oleh AI Design Agency.
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button id="scroll-to-top" aria-label="Scroll to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Link ke JavaScript kustom -->
+    <script src="./js/main.js"></script>
+</body>
+</html>

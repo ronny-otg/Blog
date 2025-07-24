@@ -1,0 +1,266 @@
+<!-- privacy-policy.html
+     Halaman Kebijakan Privasi untuk blog LogikaLiar.
+     Mengikuti gaya dan struktur yang konsisten dengan homepage.
+-->
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kebijakan Privasi - LogikaLiar</title>
+    <meta name="description" content="Kebijakan Privasi LogikaLiar mengenai pengumpulan, penggunaan, dan perlindungan data pengguna.">
+    <meta name="keywords" content="kebijakan privasi, data pribadi, perlindungan data, LogikaLiar">
+    <meta name="author" content="LogikaLiar Team">
+
+    <!-- Google Fonts: Merriweather (serif) dan Inter (sans-serif) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome untuk ikon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" xintegrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Link ke CSS yang dihasilkan oleh TailwindCSS -->
+    <link rel="stylesheet" href="./dist/output.css">
+</head>
+<body class="font-sans text-slate-800 bg-slate-50 antialiased transition-colors duration-300 ease-in-out">
+
+    <!-- Header & Navigasi -->
+    <header id="navbar" class="fixed top-0 left-0 right-0 z-50 py-4 transition-all duration-300 ease-in-out">
+        <div class="container-custom flex items-center justify-between">
+            <a href="index.html" class="flex items-center space-x-2 group">
+                <span class="logo-text-premium">LogikaLiar</span>
+            </a>
+            <nav class="hidden md:flex items-center space-x-8">
+                <a href="index.html" class="text-slate-700 dark:text-slate-300 hover:text-teal-600 dark:hover:text-emerald-400 font-medium transition-colors duration-200">Beranda</a>
+                <a href="index.html#about" class="text-slate-700 dark:text-slate-300 hover:text-teal-600 dark:hover:text-emerald-400 font-medium transition-colors duration-200">Tentang</a>
+                <a href="index.html#posts" class="text-slate-700 dark:text-slate-300 hover:text-teal-600 dark:hover:text-emerald-400 font-medium transition-colors duration-200">Artikel</a>
+                <a href="index.html#contact" class="text-slate-700 dark:text-slate-300 hover:text-teal-600 dark:hover:text-emerald-400 font-medium transition-colors duration-200">Kontak</a>
+                <button id="dark-mode-toggle" class="flex-center w-10 h-10 rounded-full bg-slate-200 dark:bg-slate-700 text-slate-800 dark:text-slate-200 transition-colors duration-300 ease-in-out" aria-label="Toggle dark mode">
+                    <i class="fas fa-moon hidden dark:block"></i>
+                    <i class="fas fa-sun block dark:hidden"></i>
+                </button>
+            </nav>
+            <div class="md:hidden flex items-center space-x-4">
+                <button id="dark-mode-toggle-mobile" class="flex-center w-10 h-10 rounded-full bg-slate-200 dark:bg-slate-700 text-slate-800 dark:text-slate-200 transition-colors duration-300 ease-in-out" aria-label="Toggle dark mode">
+                    <i class="fas fa-moon hidden dark:block"></i>
+                    <i class="fas fa-sun block dark:hidden"></i>
+                </button>
+                <button id="hamburger-menu" class="hamburger focus:outline-none" aria-label="Open mobile menu">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Nav Overlay -->
+        <nav id="mobile-nav-overlay" class="fixed top-0 right-0 h-full w-72 bg-white dark:bg-slate-900 shadow-2xl z-50 flex flex-col items-start justify-start p-8 transform translate-x-full transition-transform duration-300 ease-in-out border-l border-slate-200 dark:border-slate-700 md:hidden">
+            <div class="flex items-center justify-between w-full mb-8">
+                <a href="index.html" class="flex items-center space-x-2">
+                    <span class="logo-text-premium">LogikaLiar</span>
+                </a>
+                <button id="close-mobile-menu" class="text-slate-800 dark:text-slate-200 text-3xl hover:text-teal-600 dark:hover:text-emerald-400 transition-colors duration-200" aria-label="Close mobile menu">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+
+            <div class="flex flex-col space-y-4 w-full">
+                <a href="index.html" class="mobile-nav-link" data-target="home" data-delay="50">Beranda</a>
+                <a href="index.html#about" class="mobile-nav-link" data-target="about" data-delay="100">Tentang</a>
+                <a href="index.html#posts" class="mobile-nav-link" data-target="posts" data-delay="150">Artikel</a>
+                <a href="index.html#contact" class="mobile-nav-link" data-target="contact" data-delay="200">Kontak</a>
+            </div>
+        </nav>
+        <!-- Dimming Overlay for Mobile Menu -->
+        <div id="mobile-dim-overlay" class="hidden md:hidden"></div>
+    </header>
+
+    <main class="pt-24 pb-16 lg:pt-32 lg:pb-24">
+        <article class="container-custom max-w-prose-xl mx-auto">
+            <header class="text-center mb-12 reveal-on-scroll">
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-serif font-extrabold leading-tight text-slate-900 dark:text-slate-100 mb-4">
+                    Kebijakan Privasi
+                </h1>
+                <p class="text-slate-600 dark:text-slate-400 text-md">
+                    Terakhir Diperbarui: 24 Juli 2025
+                </p>
+            </header>
+
+            <section class="prose dark:prose-invert prose-lg max-w-none mx-auto text-slate-700 dark:text-slate-300 reveal-on-scroll" data-delay="100">
+                <p class="lead text-xl font-medium text-slate-800 dark:text-slate-200 mb-6">
+                    LogikaLiar ("kami", "milik kami", atau "kita") mengoperasikan situs web LogikaLiar.com (selanjutnya disebut sebagai "Layanan").
+                </p>
+                <p>
+                    Halaman ini memberitahu Anda tentang kebijakan kami mengenai pengumpulan, penggunaan, dan pengungkapan data pribadi saat Anda menggunakan Layanan kami dan pilihan yang Anda miliki terkait dengan data tersebut.
+                </p>
+                <p>
+                    Kami menggunakan data Anda untuk menyediakan dan meningkatkan Layanan. Dengan menggunakan Layanan, Anda menyetujui pengumpulan dan penggunaan informasi sesuai dengan kebijakan ini. Kecuali ditentukan lain dalam Kebijakan Privasi ini, istilah yang digunakan dalam Kebijakan Privasi ini memiliki arti yang sama dengan yang ada di Syarat dan Ketentuan kami, yang dapat diakses dari LogikaLiar.com.
+                </p>
+
+                <h2>Definisi</h2>
+                <ul>
+                    <li><strong>Layanan</strong> adalah situs web LogikaLiar.com yang dioperasikan oleh LogikaLiar.</li>
+                    <li><strong>Data Pribadi</strong> berarti data tentang individu yang dapat diidentifikasi dari data tersebut (atau dari informasi tersebut dan informasi lainnya baik yang berada dalam kepemilikan kami atau kemungkinan akan masuk ke dalam kepemilikan kami).</li>
+                    <li><strong>Data Penggunaan</strong> adalah data yang dikumpulkan secara otomatis baik yang dihasilkan oleh penggunaan Layanan atau dari infrastruktur Layanan itu sendiri (misalnya, durasi kunjungan halaman).</li>
+                    <li><strong>Cookie</strong> adalah file kecil yang disimpan di perangkat Anda (komputer atau perangkat seluler).</li>
+                </ul>
+
+                <h2>Pengumpulan dan Penggunaan Informasi</h2>
+                <p>
+                    Kami mengumpulkan beberapa jenis informasi yang berbeda untuk berbagai tujuan guna menyediakan dan meningkatkan Layanan kami kepada Anda.
+                </p>
+
+                <h3>Jenis Data yang Dikumpulkan</h3>
+                <h4>Data Pribadi</h4>
+                <p>
+                    Saat menggunakan Layanan kami, kami mungkin meminta Anda untuk memberikan kami informasi pengenal pribadi tertentu yang dapat digunakan untuk menghubungi atau mengidentifikasi Anda ("Data Pribadi"). Informasi pengenal pribadi mungkin termasuk, namun tidak terbatas pada:
+                </p>
+                <ul>
+                    <li>Alamat email</li>
+                    <li>Nama depan dan nama belakang</li>
+                    <li>Nomor telepon</li>
+                    <li>Alamat, Provinsi, Kode Pos, Kota</li>
+                    <li>Cookie dan Data Penggunaan</li>
+                </ul>
+
+                <h4>Data Penggunaan</h4>
+                <p>
+                    Kami juga dapat mengumpulkan informasi tentang bagaimana Layanan diakses dan digunakan ("Data Penggunaan"). Data Penggunaan ini dapat mencakup informasi seperti alamat Protokol Internet komputer Anda (misalnya alamat IP), jenis browser, versi browser, halaman Layanan kami yang Anda kunjungi, waktu dan tanggal kunjungan Anda, waktu yang dihabiskan di halaman tersebut, pengidentifikasi perangkat unik, dan data diagnostik lainnya.
+                </p>
+
+                <h4>Data Pelacakan & Cookie</h4>
+                <p>
+                    Kami menggunakan cookie dan teknologi pelacakan serupa untuk melacak aktivitas di Layanan kami dan menyimpan informasi tertentu.
+                </p>
+                <p>
+                    Cookie adalah file dengan sejumlah kecil data yang mungkin menyertakan pengidentifikasi unik anonim. Cookie dikirim ke browser Anda dari situs web dan disimpan di perangkat Anda. Teknologi pelacakan lain juga digunakan seperti beacon, tag, dan skrip untuk mengumpulkan dan melacak informasi serta untuk meningkatkan dan menganalisis Layanan kami.
+                </p>
+                <p>
+                    Anda dapat menginstruksikan browser Anda untuk menolak semua cookie atau untuk menunjukkan kapan cookie sedang dikirim. Namun, jika Anda tidak menerima cookie, Anda mungkin tidak dapat menggunakan beberapa bagian dari Layanan kami.
+                </p>
+                <p>Contoh Cookie yang kami gunakan:</p>
+                <ul>
+                    <li><strong>Cookie Sesi.</strong> Kami menggunakan Cookie Sesi untuk mengoperasikan Layanan kami.</li>
+                    <li><strong>Cookie Preferensi.</strong> Kami menggunakan Cookie Preferensi untuk mengingat preferensi Anda dan berbagai pengaturan.</li>
+                    <li><strong>Cookie Keamanan.</strong> Kami menggunakan Cookie Keamanan untuk tujuan keamanan.</li>
+                </ul>
+
+                <h2>Penggunaan Data</h2>
+                <p>LogikaLiar menggunakan data yang dikumpulkan untuk berbagai tujuan:</p>
+                <ul>
+                    <li>Untuk menyediakan dan memelihara Layanan kami</li>
+                    <li>Untuk memberi tahu Anda tentang perubahan pada Layanan kami</li>
+                    <li>Untuk memungkinkan Anda berpartisipasi dalam fitur interaktif Layanan kami saat Anda memilih untuk melakukannya</li>
+                    <li>Untuk memberikan dukungan pelanggan</li>
+                    <li>Untuk mengumpulkan analisis atau informasi berharga sehingga kami dapat meningkatkan Layanan kami</li>
+                    <li>Untuk memantau penggunaan Layanan kami</li>
+                    <li>Untuk mendeteksi, mencegah, dan mengatasi masalah teknis</li>
+                </ul>
+
+                <h2>Keamanan Data</h2>
+                <p>
+                    Keamanan data Anda penting bagi kami, tetapi ingat bahwa tidak ada metode transmisi melalui Internet, atau metode penyimpanan elektronik yang 100% aman. Meskipun kami berusaha untuk menggunakan cara yang dapat diterima secara komersial untuk melindungi Data Pribadi Anda, kami tidak dapat menjamin keamanan mutlaknya.
+                </p>
+
+                <h2>Penyedia Layanan</h2>
+                <p>
+                    Kami dapat mempekerjakan perusahaan dan individu pihak ketiga untuk memfasilitasi Layanan kami ("Penyedia Layanan"), untuk menyediakan Layanan atas nama kami, untuk melakukan layanan terkait Layanan atau untuk membantu kami dalam menganalisis bagaimana Layanan kami digunakan.
+                </p>
+                <p>
+                    Pihak ketiga ini memiliki akses ke Data Pribadi Anda hanya untuk melakukan tugas-tugas ini atas nama kami dan berkewajiban untuk tidak mengungkapkan atau menggunakannya untuk tujuan lain apa pun.
+                </p>
+
+                <h2>Tautan ke Situs Lain</h2>
+                <p>
+                    Layanan kami mungkin berisi tautan ke situs lain yang tidak dioperasikan oleh kami. Jika Anda mengklik tautan pihak ketiga, Anda akan diarahkan ke situs pihak ketiga tersebut. Kami sangat menyarankan Anda untuk meninjau Kebijakan Privasi setiap situs yang Anda kunjungi.
+                </p>
+                <p>
+                    Kami tidak memiliki kendali atas dan tidak bertanggung jawab atas konten, kebijakan privasi, atau praktik situs atau layanan pihak ketiga mana pun.
+                </p>
+
+                <h2>Privasi Anak-anak</h2>
+                <p>
+                    Layanan kami tidak ditujukan kepada siapa pun yang berusia di bawah 18 tahun ("Anak-anak").
+                </p>
+                <p>
+                    Kami tidak dengan sengaja mengumpulkan informasi pengenal pribadi dari siapa pun yang berusia di bawah 18 tahun. Jika Anda adalah orang tua atau wali dan Anda mengetahui bahwa Anak Anda telah memberikan Data Pribadi kepada kami, silakan hubungi kami. Jika kami mengetahui bahwa kami telah mengumpulkan Data Pribadi dari anak-anak tanpa verifikasi izin orang tua, kami mengambil langkah-langkah untuk menghapus informasi tersebut dari server kami.
+                </p>
+
+                <h2>Perubahan pada Kebijakan Privasi Ini</h2>
+                <p>
+                    Kami dapat memperbarui Kebijakan Privasi kami dari waktu ke waktu. Kami akan memberi tahu Anda tentang perubahan apa pun dengan memposting Kebijakan Privasi baru di halaman ini.
+                </p>
+                <p>
+                    Kami akan memberi tahu Anda melalui email dan/atau pemberitahuan penting di Layanan kami, sebelum perubahan menjadi efektif dan memperbarui "tanggal efektif" di bagian atas Kebijakan Privasi ini.
+                </p>
+                <p>
+                    Anda disarankan untuk meninjau Kebijakan Privasi ini secara berkala untuk setiap perubahan. Perubahan pada Kebijakan Privasi ini efektif ketika diposting di halaman ini.
+                </p>
+
+                <h2>Hubungi Kami</h2>
+                <p>Jika Anda memiliki pertanyaan tentang Kebijakan Privasi ini, silakan hubungi kami:</p>
+                <ul>
+                    <li>Melalui email: <a href="mailto:info@logikaliar.com">info@logikaliar.com</a></li>
+                    <li>Dengan mengunjungi halaman ini di situs web kami: <a href="index.html#contact">LogikaLiar.com/kontak</a></li>
+                </ul>
+            </section>
+
+            <footer class="mt-16 pt-8 border-t border-slate-200 dark:border-slate-700 text-center reveal-on-scroll" data-delay="200">
+                <p class="text-sm text-slate-600 dark:text-slate-400 mb-4">
+                    Kembali ke <a href="index.html" class="text-teal-600 dark:text-emerald-400 hover:underline">Beranda</a>.
+                </p>
+                <a href="index.html" class="btn-primary">Kembali ke Beranda</a>
+            </footer>
+        </article>
+    </main>
+
+    <!-- Footer (Sama seperti index.html, perlu disesuaikan path relatif) -->
+    <footer class="bg-slate-900 dark:bg-slate-950 text-slate-400 py-12 lg:py-16">
+        <div class="container-custom grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="col-span-1">
+                <a href="index.html" class="flex items-center space-x-2 mb-4">
+                    <span class="logo-text-premium">LogikaLiar</span>
+                </a>
+                <p class="text-sm leading-relaxed mb-4">
+                    Menjelajahi kedalaman pikiran, psikologi, filosofi, dan pemikiran liar untuk kehidupan yang lebih bermakna.
+                </p>
+                <div class="flex space-x-4">
+                    <a href="https://facebook.com/logikaliar" target="_blank" class="social-icon" aria-label="Facebook"><i class="fab fa-facebook-f text-xl"></i></a>
+                    <a href="https://twitter.com/logikaliar" target="_blank" class="social-icon" aria-label="Twitter"><i class="fab fa-twitter text-xl"></i></a>
+                    <a href="https://instagram.com/logikaliar" target="_blank" class="social-icon" aria-label="Instagram"><i class="fab fa-instagram text-xl"></i></a>
+                    <a href="https://linkedin.com/company/logikaliar" target="_blank" class="social-icon" aria-label="LinkedIn"><i class="fab fa-linkedin-in text-xl"></i></a>
+                </div>
+            </div>
+
+            <div class="col-span-1">
+                <h3 class="text-xl font-serif font-semibold text-slate-100 mb-4">Navigasi Cepat</h3>
+                <ul class="space-y-2">
+                    <li><a href="index.html" class="footer-link">Beranda</a></li>
+                    <li><a href="index.html#about" class="footer-link">Tentang Kami</a></li>
+                    <li><a href="index.html#posts" class="footer-link">Artikel</a></li>
+                    <li><a href="privacy-policy.html" class="footer-link">Kebijakan Privasi</a></li> <!-- Diperbarui -->
+                    <li><a href="#" class="footer-link">Syarat & Ketentuan</a></li>
+                </ul>
+            </div>
+
+            <div class="col-span-1">
+                <h3 class="text-xl font-serif font-semibold text-slate-100 mb-4">Hubungi Kami</h3>
+                <p class="text-sm mb-2">Email: <a href="mailto:info@logikaliar.com" class="footer-link">info@logikaliar.com</a></p>
+                <p class="text-sm mb-2">Telepon: <a href="tel:+6281234567890" class="footer-link">+62 812 3456 7890</a></p>
+                <p class="text-sm">Alamat: Jl. Pemikiran Kritis No. 1, Jakarta, Indonesia</p>
+            </div>
+        </div>
+        <div class="container-custom text-center text-sm text-slate-500 mt-12 pt-8 border-t border-slate-700 dark:border-slate-800">
+            &copy; 2025 LogikaLiar. Hak Cipta Dilindungi Undang-Undang. Didesain oleh AI Design Agency.
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button id="scroll-to-top" aria-label="Scroll to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Link ke JavaScript kustom -->
+    <script src="./js/main.js"></script>
+</body>
+</html>
